@@ -1,3 +1,5 @@
+import MainLayout from '../src/layout/MainLayout';
+
 export default function Home() {
-  return <div>Lorem</div>;
+  return <MainLayout>Lorem</MainLayout>;
 }
