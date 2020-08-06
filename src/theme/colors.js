@@ -22,6 +22,7 @@ const colors = {
   lightGray5: 'rgb(229,229,234)',
   lightGray6: 'rgb(242,242,247)',
   lightGray7: 'rgb(250,250,250)',
+  white: 'rgb(255,255,255)',
   darkGray: 'rgb(142,142,147)',
   darkGray2: 'rgb(99,99,102)',
   darkGray3: 'rgb(72,72,74)',
