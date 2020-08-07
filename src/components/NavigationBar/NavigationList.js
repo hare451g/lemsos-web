@@ -5,10 +5,10 @@ const NavigationList = styled.ul(
     display: none;
 
     @media only screen and (min-width: ${screen.tablet.frame}px) {
-      flex: 1;
       display: flex;
       list-style-type: none;
       padding: 12px 24px;
+      align-self: flex-end;
     }
   `
 );
