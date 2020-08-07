@@ -1,17 +1,21 @@
 import styled, { css } from 'styled-components';
 
-const NavListItem = styled.li.attrs((props) => ({
+const MobNavItem = styled.li.attrs((props) => ({
   vertical: props.vertical || false,
 }))(
-  ({ vertical, theme: { typography } }) => css`
+  ({ vertical, theme: { typography, colors } }) => css`
     display: ${vertical ? 'block' : 'inline'};
     margin: 0;
-    margin-right: 12px;
-    padding: 0 0;
+    padding: 8px 16px;
+    border-bottom: 1px solid ${colors.lightGray};
+
+    text-align: center;
 
     > a {
       font-family: ${typography.fontFamily.primary};
-      font-size: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      width: 100%;
 
       text-decoration: none;
 
@@ -22,4 +26,4 @@ const NavListItem = styled.li.attrs((props) => ({
   `
 );
 
-export default NavListItem;
+export default MobNavItem;

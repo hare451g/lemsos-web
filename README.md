@@ -1,30 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-## Getting Started
+![vercel](https://img.shields.io/website?down_color=red&down_message=down&label=Dev%20Website&up_color=green&up_message=up&url=https%3A%2F%2Flemsos-web-git-master.hare.vercel.app%2F)
 
-First, run the development server:
+# Website LEMSOS DQ ALMUQORROBIN
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![Logo](/public/images/logo.jpg?raw=true)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Sebuah LEMBAGA amil zakat dan merupakan LEMBAGA FUNDRAISING yang MENDAYAGUNAKAN dana
+infaq dan shodaqoh untuk operasional pengembangan dan perawatan pondok pesantren Darul quran
+Al-Muqorrobin.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Hasil penghimpunan dana tersebut digulirkan dalam bentuk program pelayanan dan pemberdayaan
+dalam bidang logistik, ekonomi, kesehatan, pendidikan, perawatan dan perbaikan sarana prasarana
+untuk dakwah Al-Quran dan sosial kemanusiaan.
 
-## Learn More
+Menjadi Lembaga yang Amanah, Profesional, Akun tabel, dan terkemuka yang berlandaskan pada
+ukhuwah islamiyah.
 
-To learn more about Next.js, take a look at the following resources:
+## VISI dan MISI
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### VISI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Menjadi Lembaga Amil Zakat yang Amanah, Profesional, Akun tabel, dan terkemuka yang berlandaskan
+pada ukhuwah islamiyah.
 
-## Deploy on Vercel
+### MISI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Mengoptimalkan potensi umat melalui zakat, infaq dan sedekah. Memberdayakan dalam bidang
+ekonomi, logistik, pendidikan, dan sosial menuju kemandirian.
