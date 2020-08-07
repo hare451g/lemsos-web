@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu } from 'react-feather';
 
+import Flex from '../../shared/Flex';
+import Text from '../../shared/Text';
+
 import NavigationContainer from './NavigationContainer';
 import NavigationList from './NavigationList';
 import NavListItem from './NavListItem';
@@ -46,7 +49,12 @@ function NavigationBar() {
   return (
     <>
       <NavigationContainer>
-        <img src="/images/lemsos-logo.jpg" alt="lemsos-logo" height="72px" />
+        <Flex alignItems="center">
+          <img src="/images/lemsos-logo.jpg" alt="lemsos-logo" height="72px" />
+          <Text ml="16px" fontSize="1.25rem" fontWeight="600">
+            LEMSOS DQ AL Muqorrobin
+          </Text>
+        </Flex>
         <NavigationList>
           {MENU.map(({ href, label }) => (
             <NavListItem>

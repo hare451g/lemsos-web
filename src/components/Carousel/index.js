@@ -1,11 +1,54 @@
 import { useState } from 'react';
+import CarouselProvider, {
+  Dots,
+  slidesToShowPlugin,
+} from '@brainhubeu/react-carousel';
 
-function Carousel({ imgUrls = [], initialIndex = 0 }) {
-  const [index, setIndex] = useState(initialIndex);
+import Box from '../../shared/Box';
+import screen from '../../theme/screen';
 
-  const src = imgUrls[index];
+// mocks
+import { imgUrls } from './_mock_';
 
-  return <img src={src} width="100%" />;
+function Carousel() {
+  const [current, setCurrent] = useState(0);
+
+  function handleChange(value) {
+    setCurrent(value);
+  }
+
+  return (
+    <Box>
+      <CarouselProvider
+        plugins={['centered', 'infinite', 'arrows']}
+        breakpoints={{
+          [screen.mobile.frame]: {
+            plugins: [
+              {
+                resolve: slidesToShowPlugin,
+                options: {
+                  numberOfSlides: 1,
+                },
+              },
+            ],
+          },
+        }}
+        value={current}
+        onChange={handleChange}
+      >
+        {imgUrls.map((src, index) => (
+          <img src={src} key={`carousel-item-${index + 1}`} width="100%" />
+        ))}
+      </CarouselProvider>
+      <Dots
+        value={current}
+        onChange={handleChange}
+        thumbnails={imgUrls.map((src, index) => (
+          <img src={src} key={`thumb-${index + 1}`} height="42px" />
+        ))}
+      />
+    </Box>
+  );
 }
 
 export default Carousel;

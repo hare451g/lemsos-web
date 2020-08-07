@@ -2,7 +2,11 @@ import styled, { css } from 'styled-components';
 
 const NavigationContainer = styled.nav(
   ({ theme: { colors, shadows, screen } }) => css`
+    position: fixed;
+    z-index: 1;
+
     display: flex;
+
     width: 100%;
     flex-direction: row;
     align-items: center;
