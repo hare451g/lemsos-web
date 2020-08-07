@@ -20,7 +20,7 @@ function Footer() {
             Pondok Pesantren Darul Qur’an Al Muqorrobiin
           </Text>
           <Text>Jl. Curug Hillir No. 52, RT/RW 03/09, Kelurahan Curug</Text>
-          <Text>Kecamatan Bojongsari, Kota Depok (15617)</Text>
+          <Text>Kecamatan Bojongsari, Kota Depok (16517)</Text>
           <Text mt="8px">Tel. (+62) 878-1944-7520</Text>
         </Flex>
       </Flex>
