@@ -7,12 +7,9 @@ import CarouselProvider, {
 import Box from '../../shared/Box';
 import screen from '../../theme/screen';
 
-// mocks
-import { imgUrls } from './_mock_';
-
-function Carousel() {
+function Carousel({ photos = [] }) {
   const [current, setCurrent] = useState(0);
-
+  
   function handleChange(value) {
     setCurrent(value);
   }
@@ -36,14 +33,14 @@ function Carousel() {
         value={current}
         onChange={handleChange}
       >
-        {imgUrls.map((src, index) => (
+        {photos.map((src, index) => (
           <img src={src} key={`carousel-item-${index + 1}`} width="100%" />
         ))}
       </CarouselProvider>
       <Dots
         value={current}
         onChange={handleChange}
-        thumbnails={imgUrls.map((src, index) => (
+        thumbnails={photos.map((src, index) => (
           <img src={src} key={`thumb-${index + 1}`} height="42px" />
         ))}
       />
