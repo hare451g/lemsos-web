@@ -1,3 +1,7 @@
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+![vercel](https://img.shields.io/website?down_color=red&down_message=down&label=Dev%20Website&up_color=green&up_message=up&url=https%3A%2F%2Flemsos-web-git-master.hare.vercel.app%2F)
+
 # Website LEMSOS DQ ALMUQORROBIN
 
 ![Logo](/public/images/logo.jpg?raw=true)
