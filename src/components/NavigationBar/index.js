@@ -52,7 +52,7 @@ function NavigationBar() {
         <Flex alignItems="center">
           <img src="/images/lemsos-logo.jpg" alt="lemsos-logo" height="72px" />
           <Text ml="16px" fontSize="1.25rem" fontWeight="600">
-            LEMSOS DQ AL Muqorrobin
+            LEMSOS DQ AL MUQORROBIN
           </Text>
         </Flex>
         <NavigationList>
@@ -66,7 +66,7 @@ function NavigationBar() {
           <Menu />
         </HamburgerMenu>
       </NavigationContainer>
-      <MobNavContainer isOpen={isNavigationOpen}>
+      <MobNavContainer isOpen={isNavigationOpen} total={MENU.length}>
         <ul>
           {MENU.map(({ href, label }) => (
             <MobNavItem vertical>
