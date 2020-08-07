@@ -1,4 +1,5 @@
 import { ThemeProvider } from 'styled-components';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 import GlobalStyles from '../src/shared/GlobalStyles';
 import theme from '../src/theme';
