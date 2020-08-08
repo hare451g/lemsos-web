@@ -12,6 +12,7 @@ const Content = styled.article(
     width: inherit;
 
     p {
+      margin-top: 0.5rem;
       margin-bottom: 1rem;
       line-height: 1.5;
       font-size: 1.15rem;
@@ -22,11 +23,14 @@ const Content = styled.article(
     }
 
     h2 {
+      padding-top: 1.5rem;
+      margin-bottom: 0.5rem;
       font-size: 1.5rem;
     }
 
     h3 {
       font-size: 1.45rem;
+      margin-bottom: 0.5rem;
     }
 
     h4 {
@@ -48,6 +52,7 @@ const Content = styled.article(
     h5,
     h6 {
       font-family: ${typography.fontFamily.primary};
+      margin-top: 1.25rem;
     }
 
     a {
