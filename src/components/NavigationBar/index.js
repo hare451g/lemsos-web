@@ -23,7 +23,7 @@ const MENU = [
   },
   {
     label: 'Program',
-    href: '/',
+    href: '/program',
   },
   {
     label: 'Donasi',
