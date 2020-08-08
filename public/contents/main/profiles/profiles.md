@@ -1,5 +1,3 @@
-## LEMSOS DQ ALMUQORROBIN
-
 Sebuah LEMBAGA amil zakat dan merupakan LEMBAGA FUNDRAISING yang MENDAYAGUNAKAN dana infaq dan shodaqoh untuk operasional pengembangan dan perawatan pondok pesantren Darul quran Al-Muqorrobin.
 
 Hasil penghimpunan dana tersebut digulirkan dalam bentuk program pelayanan dan pemberdayaan dalam bidang logistik, ekonomi. kesehatan, pendidikan, perawatan dan perbaikan sarana prasarana untuk dakwah Al-Quran dan sosial kemanusiaan.
