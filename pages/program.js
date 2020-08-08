@@ -33,7 +33,6 @@ export default function Program({ articles }) {
                 mx="12px"
               >
                 <Card minHeight="200px">
-                  <img src={image} height="100px" />
                   <Text as="h3" fontSize="1.25rem">
                     {title}
                   </Text>
