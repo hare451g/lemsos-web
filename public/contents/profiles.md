@@ -27,7 +27,7 @@ Mengoptimalkan potensi umat melalui zakat, infaq dan sedekah. Memberdayakan dala
 
 ### DEWAN PENGURUS LEMSOS
 
-1. Ustadz. Abdul Fatah. S.ag (Ketua Lemsos)
+1. Ustadz. Abdul Fatah. S.Pdi (Ketua Lemsos)
 2. Ustadzah. Rochmah (Wakil Lemsos)
 3. Ustadz. Ahmad Ma’ruf (Sekretaris)
 4. Ustadzah. Hj. Syahidah Megawati Jamal (Pj Sarana Prasarana)
