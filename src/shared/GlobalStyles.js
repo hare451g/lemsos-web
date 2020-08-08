@@ -1,13 +1,12 @@
 import { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle(
-  ({ theme: { screen } }) => css`
+  ({ theme: { screen, colors, typography } }) => css`
     html,
     body {
       padding: 0;
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      font-family: ${typography.fontFamily.primary} sans-serif;
     }
 
     a {
@@ -21,6 +20,8 @@ const GlobalStyles = createGlobalStyle(
 
     :root {
       font-size: 12px;
+      color: ${colors.darkGray5};
+      font-family: ${typography.fontFamily.primary} sans-serif;
     }
 
     @media only screen and (min-width: ${screen.tablet.frame}px) {
