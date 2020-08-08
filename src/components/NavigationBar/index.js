@@ -19,7 +19,7 @@ const MENU = [
   },
   {
     label: 'Profil',
-    href: '/',
+    href: '/profile',
   },
   {
     label: 'Program',
