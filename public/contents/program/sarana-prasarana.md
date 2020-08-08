@@ -1,0 +1,1 @@
+Sarana Prasarana merupakan pemberdayaan dan penyaluran zakat, infaq dan sedekah dari para donatur untuk perawatan dan perbaikan sarana prasarana belajar mengajar santri penghafal Qur’an serta untuk meningkatkan kualitas pendidikan yang mendukung. Yang didayagunakan untuk kemajuan pendidikan Al-Qur’an di Pondok Pesantren Darul Qur’an Al-Muqorrobiin.

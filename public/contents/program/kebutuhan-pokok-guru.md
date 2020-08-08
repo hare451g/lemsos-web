@@ -1,0 +1,1 @@
+Kebutuhan Pokok Guru merupakan pemberdayaan dan penyaluran zakat, infaq dan sedekah dari para donatur untuk pengembangan dan kesejahteran guru penghafal Qur’an, yang bertujuan untuk meningkatkan ekonomi, pendidikan, kesehatan para guru penghafal Qur’an, di Pondok Pesantren Darul Qur’an Al-Muqorrobiin.

@@ -1,0 +1,1 @@
+Kebutuhan Makan dan Minum Santri, merupakan pemberdayaan dan penyaluran zakat, infaq, sedekah dari para donatur untuk kebutuhan operasional makan dan minum santri, pengajar, dan para penghafal Qur’an, di Pondok Pesantren Darul Qur’an Al-Muqorrobiin
