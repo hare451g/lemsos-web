@@ -22,6 +22,7 @@ const MobNavContainer = styled.div.attrs((props) => ({
       : css`
           max-height: 0;
           opacity: 0;
+          margin-bottom: 4.375rem;
         `}
     ul {
       padding: 0px;

@@ -35,13 +35,15 @@ function Carousel({ photos = [] }) {
         ))}
       </CarouselProvider>
 
-      <Dots
-        value={current}
-        onChange={handleChange}
-        thumbnails={photos.map((src, index) => (
-          <img src={src} key={`thumb-${index + 1}`} height="42px" />
-        ))}
-      />
+      <div style={{ overflowX: 'scroll' }}>
+        <Dots
+          value={current}
+          onChange={handleChange}
+          thumbnails={photos.map((src, index) => (
+            <img src={src} key={`thumb-${index + 1}`} height="42px" />
+          ))}
+        />
+      </div>
     </Box>
   );
 }

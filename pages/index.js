@@ -1,5 +1,5 @@
 import fs from 'fs';
-import path from 'path';
+import { IMAGES_PATH } from '../src/constants/paths';
 
 import Box from '../src/shared/Box';
 import Carousel from '../src/components/Carousel';
@@ -17,10 +17,11 @@ export default function Home({ carouselPhotos }) {
 
 export async function getStaticProps(context) {
   // get carousel photos
-  const files = fs.readdirSync(`${process.cwd()}/public/images/carousel/`);
-  const carouselPhotos = files.map(file => `/images/carousel/${file}`)
+  const targetPath = `${IMAGES_PATH}/carousel`;
+  const files = fs.readdirSync(targetPath);
+  const carouselPhotos = files.map((file) => `/images/carousel/${file}`);
 
   return {
-    props: {carouselPhotos}, // will be passed to the page component as props
-  }
+    props: { carouselPhotos }, // will be passed to the page component as props
+  };
 }
