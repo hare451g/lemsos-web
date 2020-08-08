@@ -1,0 +1,1 @@
+Infaq Listrik merupakan pemberdayaan zakat, infaq dan sedekah dari para donatur untuk biaya listrik bulanan, sebagai sarana penerangan dalam mendukung proses belajar mengajar Al-Qur’an serta untuk meningkatkan kemajuan kualitas pendidikan dengan terpenuhinya sarana tersebut, yang didayagunakan di Pondok Pesantren Darul Qur’an Al-Muqorrobiin.
