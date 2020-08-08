@@ -5,6 +5,7 @@ const Wrapper = styled.div(
     background-color: ${colors.white};
     padding: 1rem 1rem;
     box-shadow: ${shadows.small};
+    margin-bottom: 2.75rem;
 
     @media only screen and (min-width: ${screen.tablet.frame}px) {
       border-radius: 8px;
