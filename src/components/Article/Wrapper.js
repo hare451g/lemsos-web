@@ -17,6 +17,15 @@ const Wrapper = styled.div(
 
       max-width: 720px;
     }
+
+    @media only screen and (min-width: ${screen.desktop.frame}px) {
+      max-width: 900px;
+    }
+
+    @media only screen and (min-width: ${screen.desktopHD.frame}px) {
+      padding: 1.75rem 1.5rem;
+      max-width: 1024px;
+    }
   `
 );
 
