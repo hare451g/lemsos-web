@@ -10,17 +10,25 @@ import Text from '../../shared/Text';
 // services
 import { getCities, getProvices } from './services/region';
 
+// constants
+import { DONATION_TYPES } from './constants';
+
 function DonationForm() {
+  // form states
   const [phone, setPhone] = useForm('');
   const [name, setName] = useForm('');
+  const [gender, setGender] = useForm('');
   const [email, setEmail] = useForm('');
   const [province, setProvince] = useForm(null);
   const [city, setCity] = useForm(null);
   const [amount, setAmount] = useForm(null);
+  const [donationType, setDonationType] = useForm(null);
 
+  // region service state
   const [provinces, setProvinces] = useState([]);
   const [cities, setCities] = useState([]);
 
+  // region loading state
   const [isLoading, setLoading] = useState(false);
 
   // When mount
@@ -53,21 +61,64 @@ function DonationForm() {
     }
   }, [province]);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const form = {
+      phone,
+      name,
+      gender,
+      email,
+      province,
+      city,
+      amount,
+      donationType,
+    };
+
+    console.log(form);
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Flex flexDirection="column" mb="1rem">
         <Text as="label">Nomor Handphone</Text>
-        <input type="text" value={phone} onChange={setPhone} />
+        <input
+          type="text"
+          value={phone}
+          onChange={setPhone}
+          placeholder="Nomor HP Aktif cth: 0812 3456 7863"
+        />
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
         <Text as="label">Nama Lengkap</Text>
-        <input type="text" value={name} onChange={setName} />
+        <Flex alignItems="center">
+          <select
+            name="gender"
+            value={gender}
+            onChange={setGender}
+            placeholder="Bapak / Ibu"
+          >
+            <option value="Pria">Bapak</option>
+            <option value="Wanita">Ibu</option>
+          </select>
+          <input
+            type="name"
+            value={name}
+            onChange={setName}
+            placeholder="Isi dengan nama lengkap anda"
+          />
+        </Flex>
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
         <Text as="label">Alamat Email</Text>
-        <input type="email" value={email} onChange={setEmail} />
+        <input
+          type="email"
+          value={email}
+          onChange={setEmail}
+          placeholder="Isi dengan alamat email Anda"
+        />
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
@@ -103,6 +154,21 @@ function DonationForm() {
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
+        <Text as="label">Tipe Donasi</Text>
+        <select
+          name="donationType"
+          value={donationType}
+          onChange={setDonationType}
+        >
+          {DONATION_TYPES.map(({ id, label }) => (
+            <option value={id} key={`city-${id}`}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </Flex>
+
+      <Flex flexDirection="column" mb="1rem">
         <Text as="label">Nominal Infaq</Text>
         <input
           type="number"
@@ -110,6 +176,10 @@ function DonationForm() {
           onChange={setAmount}
           placeholder="Nominal infaq minimal Rp.50,000"
         />
+      </Flex>
+
+      <Flex>
+        <button>Lanjutkan</button>
       </Flex>
     </form>
   );
