@@ -7,7 +7,7 @@ import MainLayout from '../src/layouts/MainLayout';
 export default function Profile({ article }) {
   return (
     <MainLayout>
-      <Article markdown={article} title="Profil" />
+      <Article markdown={article} title="LEMSOS DQ ALMUQORROBIN" />
     </MainLayout>
   );
 }
