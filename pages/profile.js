@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { CONTENTS_PATH } from '../src/constants/paths';
 
 import Article from '../src/components/Article';
 
@@ -14,10 +15,7 @@ export default function Profile({ article }) {
 
 export async function getStaticProps(context) {
   // get carousel photos
-  const article = fs.readFileSync(
-    `${process.cwd()}/public/contents/profiles.md`,
-    'utf-8'
-  );
+  const article = fs.readFileSync(`${CONTENTS_PATH}/profiles.md`, 'utf-8');
 
   return {
     props: { article }, // will be passed to the page component as props
