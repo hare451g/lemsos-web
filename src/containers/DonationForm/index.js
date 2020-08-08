@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import useForm from '../../hooks/useForm';
 
 // components
+import Button from '../../shared/Button';
 import Flex from '../../shared/Flex';
 import Input from '../../shared/Input';
 import Option from '../../shared/Option';
@@ -93,6 +94,7 @@ function DonationForm() {
           onChange={setPhone}
           placeholder="Nomor HP Aktif cth: 0812 3456 7863"
           autoComplete="tel"
+          required
         />
       </Flex>
 
@@ -106,6 +108,7 @@ function DonationForm() {
             value={gender}
             onChange={setGender}
             placeholder="Bapak / Ibu"
+            required
           >
             <Option value="Pria">Bapak</Option>
             <Option value="Wanita">Ibu</Option>
@@ -118,6 +121,7 @@ function DonationForm() {
             width="100%"
             ml="1rem"
             autoComplete="name"
+            required
           />
         </Flex>
       </Flex>
@@ -132,6 +136,7 @@ function DonationForm() {
           onChange={setEmail}
           autoComplete="email"
           placeholder="Isi dengan alamat email Anda"
+          required
         />
       </Flex>
 
@@ -144,6 +149,7 @@ function DonationForm() {
           value={province}
           onChange={setProvince}
           disabled={isLoading}
+          required
         >
           {provinces.map(({ id, nama }) => (
             <Option value={id} key={`province-${id}`}>
@@ -162,6 +168,7 @@ function DonationForm() {
           value={city}
           onChange={setCity}
           disabled={isLoading || !!!province}
+          required
         >
           {cities.map(({ id, nama }) => (
             <Option value={id} key={`city-${id}`}>
@@ -179,6 +186,7 @@ function DonationForm() {
           name="donationType"
           value={donationType}
           onChange={setDonationType}
+          required
         >
           {DONATION_TYPES.map(({ id, label }) => (
             <Option value={id} key={`city-${id}`}>
@@ -197,11 +205,14 @@ function DonationForm() {
           value={amount}
           onChange={setAmount}
           placeholder="Nominal infaq minimal Rp.50,000"
+          required
         />
       </Flex>
 
       <Flex>
-        <button>Lanjutkan</button>
+        <Button type="outline" color="primary" block>
+          Lanjutkan
+        </Button>
       </Flex>
     </form>
   );
