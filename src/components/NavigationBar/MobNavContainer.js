@@ -12,15 +12,19 @@ const MobNavContainer = styled.div.attrs((props) => ({
     ${isOpen
       ? css`
           overflow-y: hidden;
-          max-height: ${35*total + 100}px;
+          max-height: ${48 * total}px;
+          opacity: 1;
+          ul {
+            margin-top: 70px;
+            margin-bottom: 0px;
+          }
         `
       : css`
           max-height: 0;
+          opacity: 0;
         `}
     ul {
-      margin: 0px;
       padding: 0px;
-      margin-top: 100px;
     }
 
     @media only screen and (min-width: ${screen.tablet.frame}px) {

@@ -6,8 +6,8 @@ const Main = styled.main(
     padding: 8px 16px;
     flex: 1;
 
-    @media only screen and (max-width: ${screen.mobile.frame}px) {
-      margin-top: 100px;
+    @media only screen and (min-width: ${screen.tablet.frame}px) {
+      margin-top: 70px;
     }
   `
 );

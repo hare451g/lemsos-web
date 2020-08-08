@@ -15,10 +15,12 @@ const NavigationContainer = styled.nav(
     box-shadow: ${shadows.small};
     justify-content: space-between;
 
-    @media only screen and (min-width: ${screen.mobile.frame}px) {
+    padding: 8px 16px;
+
+    @media only screen and (min-width: ${screen.tablet.frame}px) {
       flex: 1;
       display: flex;
-      padding: 12px 24px;
+      padding: 0px 24px;
     }
   `
 );

@@ -50,7 +50,7 @@ function NavigationBar() {
     <>
       <NavigationContainer>
         <Flex alignItems="center">
-          <img src="/images/lemsos-logo.jpg" alt="lemsos-logo" height="72px" />
+          <img src="/images/lemsos-logo.jpg" alt="lemsos-logo" height="54px" />
           <Text ml="16px" fontSize="1.25rem" fontWeight="600">
             LEMSOS DQ AL MUQORROBIN
           </Text>
