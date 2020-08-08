@@ -58,8 +58,8 @@ function NavigationBar() {
         <NavigationList>
           {MENU.map(({ href, label }) => (
             <NavListItem key={`nav-${href}`}>
-              <Link>
-                <a href="href">{label}</a>
+              <Link href={href}>
+                <a>{label}</a>
               </Link>
             </NavListItem>
           ))}
@@ -72,8 +72,8 @@ function NavigationBar() {
         <ul>
           {MENU.map(({ href, label }) => (
             <MobNavItem key={`mobnav-${href}`} vertical>
-              <Link>
-                <a href="href">{label}</a>
+              <Link href={href}>
+                <a>{label}</a>
               </Link>
             </MobNavItem>
           ))}
