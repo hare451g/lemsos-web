@@ -3,19 +3,19 @@ const REGION_BASE_API_URL = 'https://dev.farizdotid.com/api/daerahindonesia';
 const DONATION_TYPES = [
   {
     id: 1,
-    label: 'Infaq Kebutuhan Santri',
+    label: 'INFAQ KEBUTUHAN SANTRI',
   },
   {
     id: 2,
-    label: 'Infaq Sarana Prasarana',
+    label: 'INFAQ SARANA PRASARANA',
   },
   {
     id: 3,
-    label: 'Infaq Biaya Listrik',
+    label: 'INFAQ BIAYA LISTRIK',
   },
   {
     id: 4,
-    label: 'Infaq Kebutuhan Guru',
+    label: 'INFAQ KEBUTUHAN GURU',
   },
 ];
 
