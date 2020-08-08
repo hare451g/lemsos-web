@@ -57,8 +57,10 @@ function NavigationBar() {
         </Flex>
         <NavigationList>
           {MENU.map(({ href, label }) => (
-            <NavListItem>
-              <Link href={href}>{label}</Link>
+            <NavListItem key={`nav-${href}`}>
+              <Link>
+                <a href="href">{label}</a>
+              </Link>
             </NavListItem>
           ))}
         </NavigationList>
@@ -69,8 +71,10 @@ function NavigationBar() {
       <MobNavContainer isOpen={isNavigationOpen} total={MENU.length}>
         <ul>
           {MENU.map(({ href, label }) => (
-            <MobNavItem vertical>
-              <Link href={href}>{label}</Link>
+            <MobNavItem key={`mobnav-${href}`} vertical>
+              <Link>
+                <a href="href">{label}</a>
+              </Link>
             </MobNavItem>
           ))}
         </ul>
