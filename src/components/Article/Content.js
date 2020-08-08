@@ -10,6 +10,9 @@ const Content = styled.article(
     color: ${colors.darkGray5};
 
     width: inherit;
+    hr {
+      border-color: ${colors.darkGray3};
+    }
 
     p {
       margin-top: 0.5rem;
