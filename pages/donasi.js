@@ -1,13 +1,16 @@
-import Box from '../src/shared/Box';
-import MainLayout from '../src/layouts/MainLayout';
+// containers
 import DonationForm from '../src/containers/DonationForm';
+
+// layouts
+import MainLayout from '../src/layouts/MainLayout';
+import CenteredLayout from '../src/layouts/CenteredLayout';
 
 export default function Donasi() {
   return (
     <MainLayout>
-      <Box m="16px">
+      <CenteredLayout title="Donasi">
         <DonationForm />
-      </Box>
+      </CenteredLayout>
     </MainLayout>
   );
 }

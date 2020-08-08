@@ -8,7 +8,10 @@ const MobNavContainer = styled.div.attrs((props) => ({
     transition-property: all;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-
+    position: fixed;
+    top: 1px;
+    z-index: 1;
+    width: 100%;
     ${isOpen
       ? css`
           overflow-y: hidden;
@@ -20,9 +23,8 @@ const MobNavContainer = styled.div.attrs((props) => ({
           }
         `
       : css`
-          max-height: 0;
+          display: none;
           opacity: 0;
-          margin-bottom: 4.375rem;
         `}
     ul {
       padding: 0px;

@@ -2,42 +2,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu } from 'react-feather';
 
+// shared
 import Flex from '../../shared/Flex';
 import Text from '../../shared/Text';
 
+// constants
+import { mainNavigation } from '../../constants/routes';
+
+// local components
 import NavigationContainer from './NavigationContainer';
 import NavigationList from './NavigationList';
 import NavListItem from './NavListItem';
 import HamburgerMenu from './HamburgerMenu';
 import MobNavContainer from './MobNavContainer';
 import MobNavItem from './MobNavItem';
-
-const MENU = [
-  {
-    label: 'Home',
-    href: '/',
-  },
-  {
-    label: 'Profil',
-    href: '/profile',
-  },
-  {
-    label: 'Program',
-    href: '/program',
-  },
-  {
-    label: 'Donasi',
-    href: '/donasi',
-  },
-  {
-    label: 'Layanan',
-    href: '/',
-  },
-  {
-    label: 'Kontak',
-    href: '/',
-  },
-];
 
 function NavigationBar() {
   const [isNavigationOpen, setNavigationOpen] = useState(false);
@@ -56,7 +34,7 @@ function NavigationBar() {
           </Text>
         </Flex>
         <NavigationList>
-          {MENU.map(({ href, label }) => (
+          {mainNavigation.map(({ href, label }) => (
             <NavListItem key={`nav-${href}`}>
               <Link href={href}>
                 <a>{label}</a>
@@ -68,9 +46,9 @@ function NavigationBar() {
           <Menu />
         </HamburgerMenu>
       </NavigationContainer>
-      <MobNavContainer isOpen={isNavigationOpen} total={MENU.length}>
+      <MobNavContainer isOpen={isNavigationOpen} total={mainNavigation.length}>
         <ul>
-          {MENU.map(({ href, label }) => (
+          {mainNavigation.map(({ href, label }) => (
             <MobNavItem key={`mobnav-${href}`} vertical>
               <Link href={href}>
                 <a>{label}</a>

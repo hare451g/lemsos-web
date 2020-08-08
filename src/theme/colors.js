@@ -29,6 +29,13 @@ const colors = {
   darkGray4: 'rgb(58,58,60)',
   darkGray5: 'rgb(44,44,46)',
   darkGray6: 'rgb(28,28,30)',
+  // states
+  success: 'rgb(25,199,89)',
+  danger: 'rgb(255,59,48)',
+  info: 'rgb(90,200,250)',
+  warning: 'rgb(255,149,0)',
+  // brand
+  primary: 'rgb(88,86,214)',
 };
 
 export default colors;

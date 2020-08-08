@@ -3,7 +3,8 @@ import styled, { css } from 'styled-components';
 const NavigationContainer = styled.nav(
   ({ theme: { colors, shadows, screen } }) => css`
     position: fixed;
-    z-index: 1;
+    top: 1px;
+    z-index: 2;
 
     display: flex;
 
