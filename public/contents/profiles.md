@@ -6,6 +6,8 @@ Menjadi Lembaga yang Amanah, Profesional, Akun tabel, dan terkemuka yang berland
 
 ## Visi dan Misi
 
+---
+
 ### Visi
 
 Menjadi Lembaga Amil Zakat yang Amanah, Profesional, Akun tabel, dan terkemuka yang berlandaskan pada ukhuwah islamiyah.
@@ -15,6 +17,8 @@ Menjadi Lembaga Amil Zakat yang Amanah, Profesional, Akun tabel, dan terkemuka y
 Mengoptimalkan potensi umat melalui zakat, infaq dan sedekah. Memberdayakan dalam bidang ekonomi, logistik, pendidikan, dan sosial menuju kemandirian.
 
 ## Kepengurusan
+
+---
 
 ### DEWAN PEMBINA DQ AL-MUQORROBIIN
 

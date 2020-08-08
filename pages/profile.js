@@ -15,7 +15,7 @@ export default function Profile({ article }) {
 export async function getStaticProps(context) {
   // get carousel photos
   const article = fs.readFileSync(
-    `${process.cwd()}/public/contents/main/profiles/profiles.md`,
+    `${process.cwd()}/public/contents/profiles.md`,
     'utf-8'
   );
 
