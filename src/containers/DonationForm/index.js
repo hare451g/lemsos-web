@@ -5,6 +5,9 @@ import useForm from '../../hooks/useForm';
 
 // components
 import Flex from '../../shared/Flex';
+import Input from '../../shared/Input';
+import Option from '../../shared/Option';
+import Select from '../../shared/Select';
 import Text from '../../shared/Text';
 
 // services
@@ -81,96 +84,115 @@ function DonationForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Flex flexDirection="column" mb="1rem">
-        <Text as="label">Nomor Handphone</Text>
-        <input
-          type="text"
+        <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+          Nomor Handphone
+        </Text>
+        <Input
+          type="tel"
           value={phone}
           onChange={setPhone}
           placeholder="Nomor HP Aktif cth: 0812 3456 7863"
+          autoComplete="tel"
         />
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
-        <Text as="label">Nama Lengkap</Text>
+        <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+          Nama Lengkap
+        </Text>
         <Flex alignItems="center">
-          <select
+          <Select
             name="gender"
             value={gender}
             onChange={setGender}
             placeholder="Bapak / Ibu"
           >
-            <option value="Pria">Bapak</option>
-            <option value="Wanita">Ibu</option>
-          </select>
-          <input
+            <Option value="Pria">Bapak</Option>
+            <Option value="Wanita">Ibu</Option>
+          </Select>
+          <Input
             type="name"
             value={name}
             onChange={setName}
             placeholder="Isi dengan nama lengkap anda"
+            width="100%"
+            ml="1rem"
+            autoComplete="name"
           />
         </Flex>
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
-        <Text as="label">Alamat Email</Text>
-        <input
+        <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+          Alamat Email
+        </Text>
+        <Input
           type="email"
           value={email}
           onChange={setEmail}
+          autoComplete="email"
           placeholder="Isi dengan alamat email Anda"
         />
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
-        <Text as="label">Provinsi</Text>
-        <select
+        <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+          Provinsi
+        </Text>
+        <Select
           name="provinsi"
           value={province}
           onChange={setProvince}
           disabled={isLoading}
         >
           {provinces.map(({ id, nama }) => (
-            <option value={id} key={`province-${id}`}>
+            <Option value={id} key={`province-${id}`}>
               {nama}
-            </option>
+            </Option>
           ))}
-        </select>
+        </Select>
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
-        <Text as="label">Kota / Kabupaten</Text>
-        <select
+        <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+          Kota / Kabupaten
+        </Text>
+        <Select
           name="kota"
           value={city}
           onChange={setCity}
           disabled={isLoading || !!!province}
         >
           {cities.map(({ id, nama }) => (
-            <option value={id} key={`city-${id}`}>
+            <Option value={id} key={`city-${id}`}>
               {nama}
-            </option>
+            </Option>
           ))}
-        </select>
+        </Select>
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
-        <Text as="label">Tipe Donasi</Text>
-        <select
+        <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+          Tipe Donasi
+        </Text>
+        <Select
           name="donationType"
           value={donationType}
           onChange={setDonationType}
         >
           {DONATION_TYPES.map(({ id, label }) => (
-            <option value={id} key={`city-${id}`}>
+            <Option value={id} key={`city-${id}`}>
               {label}
-            </option>
+            </Option>
           ))}
-        </select>
+        </Select>
       </Flex>
 
       <Flex flexDirection="column" mb="1rem">
-        <Text as="label">Nominal Infaq</Text>
-        <input
+        <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+          Nominal Infaq
+        </Text>
+        <Input
           type="number"
           value={amount}
           onChange={setAmount}
