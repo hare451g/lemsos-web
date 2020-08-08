@@ -15,7 +15,7 @@ import Text from '../../shared/Text';
 import { getCities, getProvices } from './services/region';
 
 // constants
-import { DONATION_TYPES } from './constants';
+import { INFAQ_TYPES } from './constants';
 
 function DonationForm() {
   // form states
@@ -188,7 +188,7 @@ function DonationForm() {
           onChange={setDonationType}
           required
         >
-          {DONATION_TYPES.map(({ id, label }) => (
+          {INFAQ_TYPES.map(({ id, label }) => (
             <Option value={id} key={`city-${id}`}>
               {label}
             </Option>
