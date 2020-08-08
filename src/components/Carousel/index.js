@@ -1,15 +1,14 @@
 import { useState } from 'react';
-import CarouselProvider, {
-  Dots,
-  slidesToShowPlugin,
-} from '@brainhubeu/react-carousel';
+import CarouselProvider, { Dots } from '@brainhubeu/react-carousel';
 
 import Box from '../../shared/Box';
-import screen from '../../theme/screen';
+import Text from '../../shared/Text';
+
+import Overlay from './Overlay';
 
 function Carousel({ photos = [] }) {
   const [current, setCurrent] = useState(0);
-  
+
   function handleChange(value) {
     setCurrent(value);
   }
@@ -18,25 +17,24 @@ function Carousel({ photos = [] }) {
     <Box>
       <CarouselProvider
         plugins={['centered', 'infinite', 'arrows']}
-        breakpoints={{
-          [screen.mobile.frame]: {
-            plugins: [
-              {
-                resolve: slidesToShowPlugin,
-                options: {
-                  numberOfSlides: 1,
-                },
-              },
-            ],
-          },
-        }}
         value={current}
         onChange={handleChange}
       >
         {photos.map((src, index) => (
-          <img src={src} key={`carousel-item-${index + 1}`} width="100%" />
+          <div style={{ position: 'relative' }}>
+            <img src={src} key={`carousel-item-${index + 1}`} width="100%" />
+            <Overlay>
+              <Text as="h2" color="white">
+                SEDEKAH BERKAH "KEPEDULIAN KITA KEBAHAGIAN MEREKA"
+              </Text>
+              <Text color="white">
+                Salurkan donasi terbaik anda melalui xxxx
+              </Text>
+            </Overlay>
+          </div>
         ))}
       </CarouselProvider>
+
       <Dots
         value={current}
         onChange={handleChange}
