@@ -32,7 +32,7 @@ export default function Program({ articles }) {
                 my="24px"
                 mx="12px"
               >
-                <Card minHeight="200px">
+                <Card minHeight="240px">
                   <Text as="h3" fontSize="1.25rem">
                     {title}
                   </Text>
