@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { IMAGES_PATH } from '../src/constants/paths';
+import { CAROUSEL_PATH } from '../src/constants/paths';
 
 import Box from '../src/shared/Box';
 import Carousel from '../src/components/Carousel';
@@ -17,8 +17,7 @@ export default function Home({ carouselPhotos }) {
 
 export async function getStaticProps(context) {
   // get carousel photos
-  const targetPath = `${IMAGES_PATH}/carousel`;
-  const files = fs.readdirSync(targetPath);
+  const files = fs.readdirSync(CAROUSEL_PATH);
   const carouselPhotos = files.map((file) => `/images/carousel/${file}`);
 
   return {
