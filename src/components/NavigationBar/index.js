@@ -27,7 +27,7 @@ const MENU = [
   },
   {
     label: 'Donasi',
-    href: '/',
+    href: '/donasi',
   },
   {
     label: 'Layanan',
