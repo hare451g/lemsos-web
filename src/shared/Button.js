@@ -57,12 +57,15 @@ const Button = styled.button.attrs((props) => ({
     ${type && types[type]}
 
     ${
-      color &&
-      css`
-        color: ${colors.white};
-        background-color: ${colors[color]};
-        border-color: ${colors[color]};
-      `
+      color && type === 'outline'
+        ? css`
+            border-color: ${colors[color]};
+            color: ${colors[color]};
+          `
+        : css`
+            color: ${colors.white};
+            background-color: ${colors[color]};
+          `
     }
   `
 );

@@ -210,7 +210,7 @@ function DonationForm() {
       </Flex>
 
       <Flex>
-        <Button type="outline" color="primary" block>
+        <Button color="primary" block>
           Lanjutkan
         </Button>
       </Flex>
