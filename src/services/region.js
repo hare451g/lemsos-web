@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { REGION_BASE_API_URL } from '../constants';
+
+const REGION_BASE_API_URL = 'https://dev.farizdotid.com/api/daerahindonesia';
 
 async function getProvices() {
   try {
