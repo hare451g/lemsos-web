@@ -1,8 +1,12 @@
 import fs from 'fs';
+
+// constants
 import { CONTENTS_PATH } from '../src/constants/paths';
 
+// components
 import Article from '../src/components/Article';
 
+// layouts
 import CenteredLayout from '../src/layouts/CenteredLayout';
 import MainLayout from '../src/layouts/MainLayout';
 

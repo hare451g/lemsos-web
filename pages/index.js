@@ -1,8 +1,15 @@
 import fs from 'fs';
+
+// shared
+import { Box } from '../src/shared';
+
+// constants
 import { CAROUSEL_PATH } from '../src/constants/paths';
 
-import Box from '../src/shared/Box';
+// components
 import Carousel from '../src/components/Carousel';
+
+// layouts
 import MainLayout from '../src/layouts/MainLayout';
 
 export default function Home({ carouselPhotos }) {

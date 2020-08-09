@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import Box from '../../shared/Box';
-import Flex from '../../shared/Flex';
-import Text from '../../shared/Text';
+import { Box, Flex, Text } from '../../shared/Box';
 
 const FooterContainer = styled.footer(
   ({ theme: { colors } }) => css`

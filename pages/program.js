@@ -1,11 +1,7 @@
 import { CONTENTS_PATH } from '../src/constants/paths';
 
 // shared components
-import Box from '../src/shared/Box';
-import Card from '../src/shared/Card';
-import Divider from '../src/shared/Divider';
-import Flex from '../src/shared/Flex';
-import Text from '../src/shared/Text';
+import { Box, Card, Divider, Flex, Text } from '../src/shared/';
 
 // layout
 import MainLayout from '../src/layouts/MainLayout';
