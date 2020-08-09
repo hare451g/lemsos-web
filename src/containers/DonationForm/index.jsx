@@ -7,7 +7,7 @@ import useForm from '../../hooks/useForm';
 import { Button, Flex, Input, Option, Select, Text } from '../../shared';
 
 // services
-import { getCities, getProvices } from './services/region';
+import { getCities, getProvices } from '../../services/region';
 
 // constants
 import { INFAQ_TYPES } from './constants';

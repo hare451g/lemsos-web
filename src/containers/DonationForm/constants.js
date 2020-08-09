@@ -17,4 +17,4 @@ const INFAQ_TYPES = [
   },
 ];
 
-export { REGION_BASE_API_URL, INFAQ_TYPES };
+export { INFAQ_TYPES };
