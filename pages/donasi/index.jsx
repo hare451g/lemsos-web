@@ -4,9 +4,6 @@ import { useState } from 'react';
 import Zakat from '../../src/components/Zakat';
 import Infaq from '../../src/components/Infaq';
 
-// containers
-import GoldZakatForm from '../../src/containers/GoldZakatForm';
-
 // constants
 import { CONTENTS_PATH } from '../../src/constants/paths';
 

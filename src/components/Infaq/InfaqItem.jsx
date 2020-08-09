@@ -20,7 +20,7 @@ function InfaqItem({ img, title, content }) {
       m="1rem"
       onClick={() => setExpanded(!isExpanded)}
     >
-      <img src={img} alt={title} width="100%" />
+      <img src={img} alt={title} width="100%" style={{ cursor: 'pointer' }} />
       <Divider />
       <Text as="h3" textAlign="center" fontSize="1.15rem" fontWeight="700">
         {title}
