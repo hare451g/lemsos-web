@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const types = {
+const variants = {
   solid: css`
     background: solid;
     border: none;
@@ -13,10 +13,10 @@ const types = {
 
 const Button = styled.button.attrs((props) => ({
   block: props.block || false,
-  color: props.color || false,
-  type: props.type || false,
+  color: props.color || '',
+  variant: props.variant || 'solid',
 }))(
-  ({ block, color, type, theme: { shadows, colors } }) => css`
+  ({ block, color, variant, theme: { shadows, colors } }) => css`
     border: none;
     border-radius: 4px;
 
@@ -54,10 +54,10 @@ const Button = styled.button.attrs((props) => ({
       `
     }
 
-    ${type && types[type]}
+    ${variant && variants[variant]}
 
     ${
-      color && type === 'outline'
+      color && variant === 'outline'
         ? css`
             border-color: ${colors[color]};
             color: ${colors[color]};
