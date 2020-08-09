@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Menu } from 'react-feather';
 
 // shared
-import { Flex, Text } from '../../shared/Flex';
+import { Flex, Text } from '../../shared';
 
 // constants
 import { mainNavigation } from '../../constants/routes';
