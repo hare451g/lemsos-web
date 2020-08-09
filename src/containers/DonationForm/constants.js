@@ -1,5 +1,3 @@
-const REGION_BASE_API_URL = 'https://dev.farizdotid.com/api/daerahindonesia';
-
 const INFAQ_TYPES = [
   {
     id: 1,
@@ -19,4 +17,4 @@ const INFAQ_TYPES = [
   },
 ];
 
-export { REGION_BASE_API_URL, INFAQ_TYPES };
+export { INFAQ_TYPES };

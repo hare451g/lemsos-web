@@ -4,15 +4,10 @@ import { useState, useEffect } from 'react';
 import useForm from '../../hooks/useForm';
 
 // components
-import Button from '../../shared/Button';
-import Flex from '../../shared/Flex';
-import Input from '../../shared/Input';
-import Option from '../../shared/Option';
-import Select from '../../shared/Select';
-import Text from '../../shared/Text';
+import { Button, Flex, Input, Option, Select, Text } from '../../shared';
 
 // services
-import { getCities, getProvices } from './services/region';
+import { getCities, getProvices } from '../../services/region';
 
 // constants
 import { INFAQ_TYPES } from './constants';

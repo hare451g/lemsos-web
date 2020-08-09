@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import CarouselProvider, { Dots } from '@brainhubeu/react-carousel';
 
-import Box from '../../shared/Box';
-import Text from '../../shared/Text';
+// shared
+import { Box, Text } from '../../shared';
 
+// local
 import Overlay from './Overlay';
 
 function Carousel({ photos = [] }) {
