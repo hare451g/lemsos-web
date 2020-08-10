@@ -1,23 +1,18 @@
 import fs from 'fs';
 
-// shared
-import { Box } from '../src/shared';
-
 // constants
 import { CAROUSEL_PATH } from '../src/constants/paths';
 
-// components
-import Carousel from '../src/components/Carousel';
+// domain
+import Home from '../src/domain/Home';
 
 // layouts
 import MainLayout from '../src/layouts/MainLayout';
 
-export default function Home({ carouselPhotos }) {
+export default function HomePage({ carouselPhotos }) {
   return (
     <MainLayout>
-      <Box>
-        <Carousel photos={carouselPhotos} />
-      </Box>
+      <Home carouselPhotos={carouselPhotos} />
     </MainLayout>
   );
 }

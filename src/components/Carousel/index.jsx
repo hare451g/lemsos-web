@@ -22,7 +22,7 @@ function Carousel({ photos = [] }) {
         onChange={handleChange}
       >
         {photos.map((src, index) => (
-          <div style={{ position: 'relative' }}>
+          <Box position="relative">
             <img src={src} key={`carousel-item-${index + 1}`} width="100%" />
             <Overlay>
               <Text as="h2" color="white">
@@ -32,7 +32,7 @@ function Carousel({ photos = [] }) {
                 Salurkan donasi terbaik anda melalui xxxx
               </Text>
             </Overlay>
-          </div>
+          </Box>
         ))}
       </CarouselProvider>
 
