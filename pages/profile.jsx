@@ -3,18 +3,11 @@ import fs from 'fs';
 // constants
 import { CONTENTS_PATH } from '../src/constants/paths';
 
-// components
-import Article from '../src/components/Article';
+// Domain
+import Profile from '../src/domain/Profile';
 
-// layouts
-import CenteredLayout from '../src/layouts/CenteredLayout';
-
-export default function Profile({ article }) {
-  return (
-    <CenteredLayout title="LEMSOS DQ ALMUQORROBIN">
-      <Article markdown={article} />
-    </CenteredLayout>
-  );
+export default function ProfilePage({ article }) {
+  return <Profile article={article} />;
 }
 
 export async function getStaticProps(context) {

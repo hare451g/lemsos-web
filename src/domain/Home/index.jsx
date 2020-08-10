@@ -4,10 +4,12 @@ import { Box } from '../../shared';
 // components
 import Carousel from '../../components/Carousel';
 
-export default function Home({ carouselPhotos = [] }) {
+function Home({ carouselPhotos = [] }) {
   return (
     <Box>
       <Carousel photos={carouselPhotos} />
     </Box>
   );
 }
+
+export default Home;
