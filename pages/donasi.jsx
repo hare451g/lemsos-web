@@ -6,15 +6,8 @@ import { CONTENTS_PATH } from '../src/constants/paths';
 // domain
 import Donasi from '../src/domain/Donasi';
 
-// layout
-import MainLayout from '../src/layouts/MainLayout';
-
 function DonationPage({ config }) {
-  return (
-    <MainLayout>
-      <Donasi config={config} />
-    </MainLayout>
-  );
+  return <Donasi config={config} />;
 }
 
 export async function getStaticProps(context) {

@@ -8,15 +8,12 @@ import Article from '../src/components/Article';
 
 // layouts
 import CenteredLayout from '../src/layouts/CenteredLayout';
-import MainLayout from '../src/layouts/MainLayout';
 
 export default function Profile({ article }) {
   return (
-    <MainLayout>
-      <CenteredLayout title="LEMSOS DQ ALMUQORROBIN">
-        <Article markdown={article} />
-      </CenteredLayout>
-    </MainLayout>
+    <CenteredLayout title="LEMSOS DQ ALMUQORROBIN">
+      <Article markdown={article} />
+    </CenteredLayout>
   );
 }
 
