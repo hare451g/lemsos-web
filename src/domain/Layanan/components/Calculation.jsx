@@ -1,6 +1,6 @@
 import numeral from 'numeral';
 
-import { Divider, Flex, Text } from '../../shared';
+import { Divider, Flex, Text } from '../../../shared';
 
 function Calculation({
   totalGoldAmount,

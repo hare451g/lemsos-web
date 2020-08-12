@@ -1,3 +1,11 @@
+/*
+  Donasi Online
+    - INFAQ Listrik
+    - INFAQ Pokok Guru
+    - INFAQ Pokok Santri
+    - INFAQ Sarana Prasarana
+*/
+
 import fs from 'fs';
 
 // constants
