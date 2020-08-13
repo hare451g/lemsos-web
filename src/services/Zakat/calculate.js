@@ -28,9 +28,26 @@ const calculateNettZakat = ({
     zakatPercentage,
   });
 
+// Trade Zakat
+const calculateTradeWealth = ({
+  cash = 0,
+  saving = 0,
+  totalItem = 0,
+  receiveable = 0,
+}) =>
+  numeral(cash).value() +
+  numeral(saving).value() +
+  numeral(totalItem).value() +
+  numeral(receiveable).value();
+
+const calculateTradeOutcome = ({ loan, payments }) =>
+  numeral(loan).value() + numeral(payments).value();
+
 export {
   calculateGoldValue,
   calculateTotalWealth,
   calculateBruteZakat,
   calculateNettZakat,
+  calculateTradeWealth,
+  calculateTradeOutcome,
 };

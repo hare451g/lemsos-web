@@ -1,13 +1,12 @@
 {
   "zakat": {
+    "percentage": 0.025,
     "gold": {
       "goldPrice": 1005000,
-      "nishabInGram": 85,
-      "zakatPercentage": 0.025
+      "nishabInGram": 85
     },
     "profession": {
-      "nishab": 4000000,
-      "zakatPercentage": 0.025
+      "nishab": 4000000
     },
     "contents": [
       {
