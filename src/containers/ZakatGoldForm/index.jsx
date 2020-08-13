@@ -7,40 +7,52 @@ import useForm from '../../hooks/useForm';
 // components
 import { Box, Button, Divider, Flex, Input, Text } from '../../shared';
 
-// constants
+// services
 import {
-  calculateGoldZakat,
-  countTotalGoldValue,
-  countTotalWealth,
-} from './calculateZakat';
+  calculateGoldValue,
+  calculateTotalWealth,
+  calculateBruteZakat,
+} from '../../services/Zakat/calculate';
+
+// local component
 import Calculation from './Calculation';
 
-// claim based constants
-const GOLD_PRICE = 1005000;
-const NISHAB_IN_GRAM = 85;
-const ZAKAT_PERCENTAGE = 0.025;
-
-function GoldZakatForm() {
+function ZakatGoldForm({
+  goldPrice = 0,
+  nishabInGram = 0,
+  zakatPercentage = 0,
+}) {
   const [saldo, setSaldo] = useForm(0);
   const [deposit, setDeposit] = useForm(0);
   const [goldSaving, setGoldSaving] = useForm(0);
 
   // calculated constants
-  const totalGoldAmount = countTotalGoldValue(goldSaving, GOLD_PRICE);
-  const totalWealth = countTotalWealth(saldo, deposit, goldSaving, GOLD_PRICE);
-  const totalNishab = NISHAB_IN_GRAM * GOLD_PRICE;
+  const totalGoldAmount = calculateGoldValue({ goldSaving, goldPrice });
+  const totalWealth = calculateTotalWealth({
+    saldo,
+    deposit,
+    goldValue: totalGoldAmount,
+  });
+  const totalNishab = calculateGoldValue({
+    goldSaving: nishabInGram,
+    goldPrice,
+  });
 
   // calculated states
   const [zakatAmount, setZakatAmount] = useState(0);
 
   useEffect(() => {
-    const totalZakat = calculateGoldZakat(totalWealth, ZAKAT_PERCENTAGE);
+    const totalZakat = calculateBruteZakat({ totalWealth, zakatPercentage });
     setZakatAmount(totalZakat);
   }, [saldo, deposit, goldSaving]);
 
   return (
     <form>
       <Box mb="2rem">
+        <Text as="h2" fontSize="1.5rem">
+          Zakat Emas
+        </Text>
+        <Divider mb="1rem" />
         <Flex flexDirection="column" mb="1rem">
           <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
             Saldo Tabungan (Rp.)
@@ -83,7 +95,7 @@ function GoldZakatForm() {
               </Text>
             </Flex>
             <Text fontSize="1rem" ml="1rem" fontWeight="600">
-              ( Harga 1 gram emas: Rp.{numeral(GOLD_PRICE).format('0,0')})
+              ( Harga 1 gram emas: Rp.{numeral(goldPrice).format('0,0')})
             </Text>
           </Flex>
         </Flex>
@@ -103,4 +115,4 @@ function GoldZakatForm() {
   );
 }
 
-export default GoldZakatForm;
+export default ZakatGoldForm;

@@ -16,33 +16,53 @@ function Calculation({
 
   return (
     <>
+      <Text as="h2" fontSize="1.25rem">
+        Total Perhitungan
+      </Text>
+      <Divider />
       <Box my="1.5rem">
-        <Text as="h3" fontSize="1.25rem">
+        <Text as="h3" fontSize="1.25rem" mb="1.25rem">
           Zakat Profesi
         </Text>
-        <Divider />
+
         <Flex justifyContent="space-between">
-          <Text>Total Zakat / Bulan </Text>
-          <Text>Rp. {bruteZakat}</Text>
+          <Text fontSize="1.15rem" mb="0.5rem" fontWeight="400">
+            Total Zakat / Bulan{' '}
+          </Text>
+          <Text fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+            Rp. {bruteZakat}
+          </Text>
         </Flex>
         <Flex justifyContent="space-between">
-          <Text>Total Zakat / Tahun</Text>
-          <Text>Rp. {bruteZakatPerYear}</Text>
+          <Text fontSize="1.15rem" mb="0.5rem" fontWeight="400">
+            Total Zakat / Tahun
+          </Text>
+          <Text fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+            Rp. {bruteZakatPerYear}
+          </Text>
         </Flex>
       </Box>
       {withOutcome && (
         <Box my="1.5rem">
-          <Text as="h3" fontSize="1.25rem">
+          <Text as="h3" fontSize="1.25rem" mb="1.25rem">
             Zakat Profesi dengan Pengeluaran
           </Text>
-          <Divider />
+
           <Flex justifyContent="space-between">
-            <Text>Total Zakat / Bulan </Text>
-            <Text>Rp. {nettZakat}</Text>
+            <Text fontSize="1.15rem" mb="0.5rem" fontWeight="400">
+              Total Zakat / Bulan{' '}
+            </Text>
+            <Text fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+              Rp. {nettZakat}
+            </Text>
           </Flex>
           <Flex justifyContent="space-between">
-            <Text>Total Zakat / Tahun </Text>
-            <Text>Rp. {nettZakatPerYear}</Text>
+            <Text fontSize="1.15rem" mb="0.5rem" fontWeight="400">
+              Total Zakat / Tahun{' '}
+            </Text>
+            <Text fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+              Rp. {nettZakatPerYear}
+            </Text>
           </Flex>
         </Box>
       )}

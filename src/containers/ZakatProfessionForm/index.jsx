@@ -101,9 +101,13 @@ function ZakatProfessionForm({ nishab = 0, zakatPercentage = 0 }) {
         )}
       </Box>
       <Box my="1rem">
-        <Flex justifyContent="space-between">
-          <Text as="h4">Nishab </Text>
-          <Text>Rp. {numeral(nishab).format('0,0')}</Text>
+        <Flex justifyContent="space-between" alignItems="center">
+          <Text as="h4" fontSize="1.15rem" mb="0.5rem" fontWeight="400">
+            Nishab{' '}
+          </Text>
+          <Text fontSize="1.15rem" mb="0.5rem" fontWeight="600">
+            Rp. {numeral(nishab).format('0,0')}
+          </Text>
         </Flex>
       </Box>
 
@@ -114,7 +118,7 @@ function ZakatProfessionForm({ nishab = 0, zakatPercentage = 0 }) {
       />
 
       <Button color="primary" block>
-        Bayar Zakat
+        Bayar
       </Button>
     </form>
   );

@@ -3,6 +3,7 @@ import { Box, Card, Divider, Text } from '../src/shared';
 
 // containers
 import ZakatProfessionForm from '../src/containers/ZakatProfessionForm';
+import ZakatGoldForm from '../src/containers/ZakatGoldForm';
 
 /*
   Layanan
@@ -12,17 +13,21 @@ import ZakatProfessionForm from '../src/containers/ZakatProfessionForm';
     - Zakat Perushaan
     - Zakat Niaga
 */
-function LayananPage({ config }) {
+function LayananPage({ gold, profession }) {
   return (
     <Box maxWidth="720px" m="auto" mt="4rem">
-      <Text as="h1" fontSize="3rem">
-        Kalkulator Zakat
-      </Text>
-      <Divider />
-      <Card maxWidth="720px" m="auto">
+      <Card maxWidth="720px" m="auto" my="2rem">
         <ZakatProfessionForm
-          nishab={config.profession.nishab}
-          zakatPercentage={config.profession.zakatPercentage}
+          nishab={profession.nishab}
+          zakatPercentage={profession.zakatPercentage}
+        />
+      </Card>
+
+      <Card maxWidth="720px" m="auto" my="2rem">
+        <ZakatGoldForm
+          goldPrice={gold.goldPrice}
+          nishabInGram={gold.nishabInGram}
+          zakatPercentage={gold.zakatPercentage}
         />
       </Card>
     </Box>
@@ -33,7 +38,8 @@ export async function getStaticProps(context) {
   const { zakat } = require('../public/data/donasi.json');
   return {
     props: {
-      config: zakat,
+      gold: zakat.gold,
+      profession: zakat.profession,
     },
   };
 }
