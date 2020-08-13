@@ -6,37 +6,28 @@
     - INFAQ Sarana Prasarana
 */
 
-import fs from 'fs';
-
-// constants
-import { CONTENTS_PATH } from '../src/constants/paths';
-
 // domain
-import Donasi from '../src/domain/Donasi';
+import DonationForm from '../src/containers/DonationForm';
 
-function DonationPage({ config }) {
-  return <Donasi config={config} />;
+// Layouts
+import CenteredLayout from '../src/layouts/CenteredLayout';
+import { getProvinces } from '../src/services/Region';
+
+function DonationPage({ infaqTypes = [], provinces = [] }) {
+  return (
+    <CenteredLayout title="Donasi Online">
+      <DonationForm infaqTypes={infaqTypes} provinces={provinces} />
+    </CenteredLayout>
+  );
 }
 
-export async function getStaticProps(context) {
-  const data = require('../public/data/donasi.json');
-  const config = {
-    ...data,
-    infaq: {
-      contents: [
-        ...data.infaq.contents.map((infaq) => ({
-          ...infaq,
-          content: fs.readFileSync(
-            `${CONTENTS_PATH}/program/${infaq.content}`,
-            'utf-8'
-          ),
-        })),
-      ],
-    },
-  };
+export async function getServerSideProps(context) {
+  const data = require('../public/data/infaq-types.json');
+
+  const provinces = await getProvinces();
 
   return {
-    props: { config },
+    props: { infaqTypes: data, provinces: provinces.list },
   };
 }
 

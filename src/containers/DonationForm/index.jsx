@@ -7,12 +7,9 @@ import useForm from '../../hooks/useForm';
 import { Button, Flex, Input, Option, Select, Text } from '../../shared';
 
 // services
-import { getCities, getProvices } from '../../services/region';
+import { getCities } from '../../services/Region';
 
-// constants
-import { INFAQ_TYPES } from './constants';
-
-function DonationForm() {
+function DonationForm({ infaqTypes = [], provinces = [] }) {
   // form states
   const [phone, setPhone] = useForm('');
   const [name, setName] = useForm('');
@@ -24,35 +21,21 @@ function DonationForm() {
   const [donationType, setDonationType] = useForm(null);
 
   // region service state
-  const [provinces, setProvinces] = useState([]);
   const [cities, setCities] = useState([]);
 
   // region loading state
   const [isLoading, setLoading] = useState(false);
-
-  // When mount
-  useEffect(() => {
-    async function onFetchProvinces() {
-      setLoading(true);
-      const result = await getProvices();
-      if (result.list) {
-        setProvinces(result.list);
-      }
-      setLoading(false);
-    }
-
-    if (!isLoading) {
-      onFetchProvinces();
-    }
-  }, []);
+  const [isSubmitting, setSubmitting] = useState(false);
 
   // When provice changes
   useEffect(() => {
     async function onFetchCities(provinceId) {
+      setLoading(true);
       const result = await getCities(provinceId);
       if (result.list) {
         setCities(result.list);
       }
+      setLoading(false);
     }
 
     if (!isLoading && province) {
@@ -62,7 +45,7 @@ function DonationForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    setSubmitting(true);
     const form = {
       phone,
       name,
@@ -73,8 +56,7 @@ function DonationForm() {
       amount,
       donationType,
     };
-
-    console.log(form);
+    setSubmitting(false);
   }
 
   return (
@@ -162,7 +144,7 @@ function DonationForm() {
           name="kota"
           value={city}
           onChange={setCity}
-          disabled={isLoading || !!!province}
+          disabled={isLoading}
           required
         >
           {cities.map(({ id, nama }) => (
@@ -183,7 +165,7 @@ function DonationForm() {
           onChange={setDonationType}
           required
         >
-          {INFAQ_TYPES.map(({ id, label }) => (
+          {infaqTypes.map(({ id, label }) => (
             <Option value={id} key={`city-${id}`}>
               {label}
             </Option>
@@ -205,7 +187,7 @@ function DonationForm() {
       </Flex>
 
       <Flex>
-        <Button color="primary" block>
+        <Button color="primary" disabled={isSubmitting} block>
           Lanjutkan
         </Button>
       </Flex>

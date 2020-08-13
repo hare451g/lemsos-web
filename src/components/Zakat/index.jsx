@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { Box, Divider, Flex, Text } from '../../shared';
 
 // containers
-import GoldZakatForm from '../../containers/GoldZakatForm';
+import ZakatGoldForm from '../../containers/ZakatGoldForm';
 
 // local
 import ZakatItem from './ZakatItem';
@@ -60,7 +60,7 @@ function Zakat({ types = [] }) {
               {selectedType.name}
             </Text>
             <Divider mb="2rem" />
-            <GoldZakatForm />
+            <ZakatGoldForm />
           </>
         )}
       </Modal>

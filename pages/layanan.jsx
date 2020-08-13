@@ -8,10 +8,9 @@
 */
 
 // domain
-import Layanan from '../src/domain/Layanan';
 
 function LayananPage({}) {
-  return <Layanan />;
+  return <div>Layanan</div>;
 }
 
 export async function getStaticProps(context) {
