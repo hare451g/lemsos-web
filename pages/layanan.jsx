@@ -2,10 +2,12 @@
 import { Box, Card, Divider, Text } from '../src/shared';
 
 // containers
-import ZakatProfessionForm from '../src/containers/ZakatProfessionForm';
-import ZakatGoldForm from '../src/containers/ZakatGoldForm';
-import ZakatTradeForm from '../src/containers/ZakatTradeForm';
-import ZakatCompanyForm from '../src/containers/ZakatCompanyForm';
+import {
+  ZakatCompanyForm,
+  ZakatGoldForm,
+  ZakatProfessionForm,
+  ZakatTradeForm,
+} from '../src/containers';
 
 /*
   Layanan
