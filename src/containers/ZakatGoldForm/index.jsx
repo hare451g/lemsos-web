@@ -21,6 +21,7 @@ function ZakatGoldForm({
   goldPrice = 0,
   nishabInGram = 0,
   zakatPercentage = 0,
+  onSubmit = () => {},
 }) {
   const [saldo, setSaldo] = useForm(0);
   const [deposit, setDeposit] = useForm(0);
@@ -46,8 +47,24 @@ function ZakatGoldForm({
     setZakatAmount(totalZakat);
   }, [saldo, deposit, goldSaving]);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const formValues = {
+      saldo,
+      deposit,
+      goldSaving,
+      totalGoldAmount,
+      totalWealth,
+      totalNishab,
+      zakatAmount,
+    };
+
+    onSubmit(formValues);
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Box mb="2rem">
         <Text as="h2" fontSize="1.5rem">
           Zakat Emas

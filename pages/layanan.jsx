@@ -5,6 +5,7 @@ import { Box, Card, Divider, Text } from '../src/shared';
 import ZakatProfessionForm from '../src/containers/ZakatProfessionForm';
 import ZakatGoldForm from '../src/containers/ZakatGoldForm';
 import ZakatTradeForm from '../src/containers/ZakatTradeForm';
+import ZakatCompanyForm from '../src/containers/ZakatCompanyForm';
 
 /*
   Layanan
@@ -34,6 +35,10 @@ function LayananPage({ gold, profession, zakatPercentage }) {
 
       <Card maxWidth="720px" m="auto" my="2rem">
         <ZakatTradeForm zakatPercentage={zakatPercentage} />
+      </Card>
+
+      <Card maxWidth="720px" m="auto" my="2rem">
+        <ZakatCompanyForm zakatPercentage={zakatPercentage} />
       </Card>
     </Box>
   );

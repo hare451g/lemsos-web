@@ -17,7 +17,11 @@ import {
 // local
 import Calculation from './Calculation';
 
-function ZakatTradeForm({ nishab = 0, zakatPercentage = 0 }) {
+function ZakatTradeForm({
+  nishab = 0,
+  zakatPercentage = 0,
+  onSubmit = () => {},
+}) {
   const [cash, setCash] = useForm(0);
   const [saving, setSaving] = useForm(0);
   const [totalItem, setTotalItem] = useForm(0);
@@ -58,6 +62,8 @@ function ZakatTradeForm({ nishab = 0, zakatPercentage = 0 }) {
       payments,
       amountZakat,
     };
+
+    onSubmit(formValues);
   }
 
   return (

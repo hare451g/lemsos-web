@@ -17,7 +17,11 @@ import {
 // local
 import Calculation from './Calculation';
 
-function ZakatProfessionForm({ nishab = 0, zakatPercentage = 0 }) {
+function ZakatProfessionForm({
+  nishab = 0,
+  zakatPercentage = 0,
+  onSubmit = () => {},
+}) {
   const [totalIncome, setIncome] = useForm(0);
   const [totalOutcome, setOutcome] = useForm(0);
   const [withOutcome, setWithOutcome] = useToggle(false);
@@ -53,6 +57,8 @@ function ZakatProfessionForm({ nishab = 0, zakatPercentage = 0 }) {
       totalNettZakat,
       totalBruteZakat,
     };
+
+    onSubmit(formValues);
   }
 
   return (
