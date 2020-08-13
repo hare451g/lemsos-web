@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Box, Flex, Text } from '../../shared';
+import { Flex, Text } from '../../shared';
 
 const FooterContainer = styled.footer(
   ({ theme: { colors } }) => css`
@@ -12,8 +12,8 @@ const FooterContainer = styled.footer(
 function Footer() {
   return (
     <FooterContainer>
-      <Flex alignItems="center">
-        <Flex alignItems="center" width="50%">
+      <Flex alignItems="center" flexDirection={['column', 'row']}>
+        <Flex alignItems="center" width={['100%', '50%']}>
           <img src="/images/logo.jpg" height="100px" alt="logo lemsos" />
           <Flex flexDirection="column" my="24px" ml="16px">
             <Text fontSize="1.2rem" mb="8px">
@@ -24,7 +24,7 @@ function Footer() {
             <Text mt="8px">Tel. (+62) 878-1944-7520</Text>
           </Flex>
         </Flex>
-        <Flex alignItems="center" width="50%">
+        <Flex alignItems="center" width={['100%', '50%']}>
           <img src="/images/lemsos-logo.jpg" height="100px" alt="logo lemsos" />
           <Flex flexDirection="column" my="24px" ml="16px">
             <Text fontSize="1.2rem" mb="8px">

@@ -1,25 +1,13 @@
 import fs from 'fs';
 
-// shared
-import { Box } from '../src/shared';
+// components
+import { Carousel } from '../src/components';
 
 // constants
 import { CAROUSEL_PATH } from '../src/constants/paths';
 
-// components
-import Carousel from '../src/components/Carousel';
-
-// layouts
-import MainLayout from '../src/layouts/MainLayout';
-
-export default function Home({ carouselPhotos }) {
-  return (
-    <MainLayout>
-      <Box>
-        <Carousel photos={carouselPhotos} />
-      </Box>
-    </MainLayout>
-  );
+function HomePage({ carouselPhotos }) {
+  return <Carousel photos={carouselPhotos} />;
 }
 
 export async function getStaticProps(context) {
@@ -31,3 +19,5 @@ export async function getStaticProps(context) {
     props: { carouselPhotos }, // will be passed to the page component as props
   };
 }
+
+export default HomePage;

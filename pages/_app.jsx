@@ -3,6 +3,9 @@ import { ThemeProvider } from 'styled-components';
 // css
 import '@brainhubeu/react-carousel/lib/style.css';
 
+// layout
+import MainLayout from '../src/layouts/MainLayout';
+
 // shared
 import GlobalStyles from '../src/shared/GlobalStyles';
 
@@ -13,7 +16,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
     </ThemeProvider>
   );
 }

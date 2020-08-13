@@ -3,20 +3,17 @@ import fs from 'fs';
 // constants
 import { CONTENTS_PATH } from '../src/constants/paths';
 
-// components
+// Domain
 import Article from '../src/components/Article';
 
 // layouts
 import CenteredLayout from '../src/layouts/CenteredLayout';
-import MainLayout from '../src/layouts/MainLayout';
 
-export default function Profile({ article }) {
+function ProfilePage({ article }) {
   return (
-    <MainLayout>
-      <CenteredLayout title="LEMSOS DQ ALMUQORROBIN">
-        <Article markdown={article} />
-      </CenteredLayout>
-    </MainLayout>
+    <CenteredLayout title="LEMSOS DQ ALMUQORROBIN">
+      <Article markdown={article} />
+    </CenteredLayout>
   );
 }
 
@@ -28,3 +25,5 @@ export async function getStaticProps(context) {
     props: { article }, // will be passed to the page component as props
   };
 }
+
+export default ProfilePage;

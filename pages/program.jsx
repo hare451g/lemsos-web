@@ -3,15 +3,12 @@ import { CONTENTS_PATH } from '../src/constants/paths';
 // shared components
 import { Box, Card, Divider, Flex, Text } from '../src/shared';
 
-// layout
-import MainLayout from '../src/layouts/MainLayout';
-
 // utils
 import { getMDfromFile } from '../src/utils/contents';
 
 export default function Program({ articles }) {
   return (
-    <MainLayout>
+    <>
       <Box as="section" name="program header" m="16px" mb="8px">
         <Text as="h1" fontSize="2.5rem" fontWeight="400">
           Program
@@ -42,7 +39,7 @@ export default function Program({ articles }) {
           </Flex>
         ))}
       </Box>
-    </MainLayout>
+    </>
   );
 }
 
