@@ -1,18 +1,42 @@
 [
   {
     "id": 1,
+    "key": "Santri",
     "label": "INFAQ Kebutuhan Santri"
   },
   {
     "id": 2,
+    "key": "Sarana",
     "label": "INFAQ Sarana Prasarana"
   },
   {
     "id": 3,
+    "key": "Listrik",
     "label": "INFAQ Biaya Listrik"
   },
   {
     "id": 4,
+    "key": "Guru",
     "label": "INFAQ Kebutuhan Guru"
+  },
+  {
+    "id": 5,
+    "label": "ZAKAT Pekerja",
+    "key": "Pekerja"
+  },
+  {
+    "id": 6,
+    "label": "ZAKAT Emas",
+    "key": "Emas"
+  },
+  {
+    "id": 7,
+    "label": "ZAKAT Niaga",
+    "key": "Niaga"
+  },
+  {
+    "id": 8,
+    "label": "ZAKAT Perusahaan",
+    "key": "Perusahaan"
   }
 ]

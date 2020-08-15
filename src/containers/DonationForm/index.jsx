@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import numeral from 'numeral';
 
 // hooks
 import useForm from '../../hooks/useForm';
@@ -9,7 +10,12 @@ import { Button, Flex, Input, Option, Select, Text } from '../../shared';
 // services
 import { getCities } from '../../services/Region';
 
-function DonationForm({ infaqTypes = [], provinces = [] }) {
+function DonationForm({
+  infaqTypes = [],
+  provinces = [],
+  initialAmount = 0,
+  type = null,
+}) {
   // form states
   const [phone, setPhone] = useForm('');
   const [name, setName] = useForm('');
@@ -17,8 +23,8 @@ function DonationForm({ infaqTypes = [], provinces = [] }) {
   const [email, setEmail] = useForm('');
   const [province, setProvince] = useForm(null);
   const [city, setCity] = useForm(null);
-  const [amount, setAmount] = useForm(null);
-  const [donationType, setDonationType] = useForm(null);
+  const [amount, setAmount] = useForm(initialAmount);
+  const [donationType, setDonationType] = useForm(type);
 
   // region service state
   const [cities, setCities] = useState([]);
@@ -175,11 +181,11 @@ function DonationForm({ infaqTypes = [], provinces = [] }) {
 
       <Flex flexDirection="column" mb="1rem">
         <Text as="label" fontSize="1.15rem" mb="0.5rem" fontWeight="600">
-          Nominal Infaq
+          Nominal Infaq (Rp)
         </Text>
         <Input
-          type="number"
-          value={amount}
+          type="text"
+          value={numeral(amount).format('0,0')}
           onChange={setAmount}
           placeholder="Nominal infaq minimal Rp.50,000"
           required

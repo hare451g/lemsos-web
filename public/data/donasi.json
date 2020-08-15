@@ -10,22 +10,26 @@
     },
     "contents": [
       {
-        "key": "zakat_profesi",
+        "infaqId": 5,
+        "key": "Pekerja",
         "name": "Zakat Profesi",
         "img": "/images/donation/working.jfif"
       },
       {
-        "key": "zakat_niaga",
-        "name": "Zakat Niaga",
-        "img": "/images/donation/trade.jfif"
-      },
-      {
-        "key": "zakat_emas",
+        "infaqId": 6,
+        "key": "Emas",
         "name": "Zakat Emas",
         "img": "/images/donation/gold.jfif"
       },
       {
-        "key": "zakat_perusahaan",
+        "infaqId": 7,
+        "key": "Niaga",
+        "name": "Zakat Niaga",
+        "img": "/images/donation/trade.jfif"
+      },
+      {
+        "infaqId": 8,
+        "key": "Perusahaan",
         "name": "Zakat Perusahaan",
         "img": "/images/donation/company.jfif"
       }

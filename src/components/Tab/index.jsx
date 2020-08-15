@@ -19,11 +19,14 @@ function Tab({ children, initialKey }) {
           </Button>
         ))}
       </Flex>
-      {children.map(({ props, key }) => (
-        <Pane key={key} isActive={activeKey === key}>
-          {props.children}
-        </Pane>
-      ))}
+      {children.map(({ props, key }) => {
+        const isActive = activeKey === key;
+        return (
+          <Pane key={key} isActive={isActive}>
+            {props.children}
+          </Pane>
+        );
+      })}
     </Box>
   );
 }

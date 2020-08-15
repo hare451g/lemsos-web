@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 // containers
 import {
   ZakatCompanyForm,
@@ -21,13 +22,24 @@ import { Tab } from '../src/components';
     - Zakat Niaga
 */
 function LayananPage({ gold, profession, zakatPercentage }) {
+  const router = useRouter();
+
+  const handleSubmit = (form) => {
+    router.push({
+      pathname: '/donasi',
+      query: form,
+    });
+  };
+
   return (
     <CenteredLayout title="Kalkulator Zakat">
-      <Tab initialKey="Perkerja">
-        <div key="Perkerja">
+      <Tab initialKey="Pekerja">
+        <div key="Pekerja">
           <ZakatProfessionForm
             nishab={profession.nishab}
             zakatPercentage={zakatPercentage}
+            onSubmit={handleSubmit}
+            infaqType="Pekerja"
           />
         </div>
 
@@ -36,15 +48,25 @@ function LayananPage({ gold, profession, zakatPercentage }) {
             goldPrice={gold.goldPrice}
             nishabInGram={gold.nishabInGram}
             zakatPercentage={zakatPercentage}
+            onSubmit={handleSubmit}
+            infaqType="Emas"
           />
         </div>
 
         <div key="Niaga">
-          <ZakatTradeForm zakatPercentage={zakatPercentage} />
+          <ZakatTradeForm
+            zakatPercentage={zakatPercentage}
+            onSubmit={handleSubmit}
+            infaqType="Niaga"
+          />
         </div>
 
         <div key="Perusahaan">
-          <ZakatCompanyForm zakatPercentage={zakatPercentage} />
+          <ZakatCompanyForm
+            zakatPercentage={zakatPercentage}
+            onSubmit={handleSubmit}
+            infaqType="Perusahaan"
+          />
         </div>
       </Tab>
     </CenteredLayout>

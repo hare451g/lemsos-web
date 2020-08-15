@@ -21,6 +21,7 @@ function ZakatTradeForm({
   nishab = 0,
   zakatPercentage = 0,
   onSubmit = () => {},
+  infaqType = '',
 }) {
   const [cash, setCash] = useForm(0);
   const [saving, setSaving] = useForm(0);
@@ -53,17 +54,10 @@ function ZakatTradeForm({
   function handleSubmit(e) {
     e.preventDefault();
 
-    const formValues = {
-      cash,
-      saving,
-      totalItem,
-      receiveable,
-      loan,
-      payments,
-      amountZakat,
-    };
-
-    onSubmit(formValues);
+    onSubmit({
+      amount: amountZakat,
+      infaqType,
+    });
   }
 
   return (
