@@ -22,6 +22,7 @@ function ZakatGoldForm({
   nishabInGram = 0,
   zakatPercentage = 0,
   onSubmit = () => {},
+  infaqType = '',
 }) {
   const [saldo, setSaldo] = useForm(0);
   const [deposit, setDeposit] = useForm(0);
@@ -50,17 +51,10 @@ function ZakatGoldForm({
   function handleSubmit(e) {
     e.preventDefault();
 
-    const formValues = {
-      saldo,
-      deposit,
-      goldSaving,
-      totalGoldAmount,
-      totalWealth,
-      totalNishab,
-      zakatAmount,
-    };
-
-    onSubmit(formValues);
+    onSubmit({
+      amount: zakatAmount,
+      infaqType,
+    });
   }
 
   return (

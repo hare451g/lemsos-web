@@ -21,6 +21,7 @@ function ZakatProfessionForm({
   nishab = 0,
   zakatPercentage = 0,
   onSubmit = () => {},
+  infaqType = '',
 }) {
   const [totalIncome, setIncome] = useForm(0);
   const [totalOutcome, setOutcome] = useForm(0);
@@ -51,11 +52,8 @@ function ZakatProfessionForm({
     e.preventDefault();
 
     const formValues = {
-      totalIncome,
-      totalOutcome,
-      withOutcome,
-      totalNettZakat,
-      totalBruteZakat,
+      amount: withOutcome ? totalNettZakat : totalBruteZakat,
+      infaqType,
     };
 
     onSubmit(formValues);
