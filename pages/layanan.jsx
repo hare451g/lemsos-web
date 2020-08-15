@@ -1,6 +1,3 @@
-// shared components
-import { Box, Card, Divider, Text } from '../src/shared';
-
 // containers
 import {
   ZakatCompanyForm,
@@ -8,6 +5,12 @@ import {
   ZakatProfessionForm,
   ZakatTradeForm,
 } from '../src/containers';
+
+// layouts
+import { CenteredLayout } from '../src/layouts';
+
+// components
+import { Tab } from '../src/components';
 
 /*
   Layanan
@@ -19,30 +22,32 @@ import {
 */
 function LayananPage({ gold, profession, zakatPercentage }) {
   return (
-    <Box maxWidth="720px" m="auto" mt="4rem">
-      <Card maxWidth="720px" m="auto" my="2rem">
-        <ZakatProfessionForm
-          nishab={profession.nishab}
-          zakatPercentage={zakatPercentage}
-        />
-      </Card>
+    <CenteredLayout title="Kalkulator Zakat">
+      <Tab initialKey="Perkerja">
+        <div key="Perkerja">
+          <ZakatProfessionForm
+            nishab={profession.nishab}
+            zakatPercentage={zakatPercentage}
+          />
+        </div>
 
-      <Card maxWidth="720px" m="auto" my="2rem">
-        <ZakatGoldForm
-          goldPrice={gold.goldPrice}
-          nishabInGram={gold.nishabInGram}
-          zakatPercentage={zakatPercentage}
-        />
-      </Card>
+        <div key="Emas">
+          <ZakatGoldForm
+            goldPrice={gold.goldPrice}
+            nishabInGram={gold.nishabInGram}
+            zakatPercentage={zakatPercentage}
+          />
+        </div>
 
-      <Card maxWidth="720px" m="auto" my="2rem">
-        <ZakatTradeForm zakatPercentage={zakatPercentage} />
-      </Card>
+        <div key="Niaga">
+          <ZakatTradeForm zakatPercentage={zakatPercentage} />
+        </div>
 
-      <Card maxWidth="720px" m="auto" my="2rem">
-        <ZakatCompanyForm zakatPercentage={zakatPercentage} />
-      </Card>
-    </Box>
+        <div key="Perusahaan">
+          <ZakatCompanyForm zakatPercentage={zakatPercentage} />
+        </div>
+      </Tab>
+    </CenteredLayout>
   );
 }
 
