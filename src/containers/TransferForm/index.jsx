@@ -1,6 +1,10 @@
 import numeral from 'numeral';
+import Link from 'next/link';
 
-import { Box, Divider, Flex, Text } from '../../shared';
+// components - shared
+import { Box, Button, Divider, Flex, Text } from '../../shared';
+
+// components - local
 import AmountPanel from './AmountPanel';
 
 function TransferForm({
@@ -34,19 +38,21 @@ function TransferForm({
 
       <Box mb="1.5rem">
         <AmountPanel>
-          <Box>
-            <Text
-              fontSize="1.15rem"
-              fontWeight="600"
-              letterSpacing="0.115rem"
-              textAlign="center"
-            >
-              {accountNumber}
-            </Text>
-            <Text>
-              a.n. <strong>{accountOwner}</strong>
-            </Text>
-          </Box>
+          <Flex alignItems="center">
+            <img src="/images/mandiri-syariah.png" width="100px" />
+            <Box ml="1rem">
+              <Text
+                fontSize="1.15rem"
+                fontWeight="600"
+                letterSpacing="0.115rem"
+              >
+                {accountNumber}
+              </Text>
+              <Text>
+                a.n. <strong>{accountOwner}</strong>
+              </Text>
+            </Box>
+          </Flex>
         </AmountPanel>
       </Box>
 
@@ -83,6 +89,13 @@ function TransferForm({
           </Text>
         </AmountPanel>
       </Box>
+      <Link href="/">
+        <a>
+          <Button variant="solid" color="primary" block>
+            Kembali ke Halaman Utama
+          </Button>
+        </a>
+      </Link>
     </Box>
   );
 }
