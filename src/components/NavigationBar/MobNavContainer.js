@@ -30,7 +30,7 @@ const MobNavContainer = styled.div.attrs((props) => ({
       padding: 0px;
     }
 
-    @media only screen and (min-width: ${screen.tablet.frame}px) {
+    @media only screen and (min-width: ${screen.tablet.frame}) {
       display: none;
     }
   `

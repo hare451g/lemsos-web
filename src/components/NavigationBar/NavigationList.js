@@ -4,7 +4,7 @@ const NavigationList = styled.ul(
   ({ theme: { screen } }) => css`
     display: none;
 
-    @media only screen and (min-width: ${screen.tablet.frame}px) {
+    @media only screen and (min-width: ${screen.tablet.frame}) {
       display: flex;
       list-style-type: none;
       padding: 12px 24px;

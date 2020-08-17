@@ -5,7 +5,7 @@ const Wrapper = styled.div(
     background-color: ${colors.white};
     padding: 1rem 1rem;
 
-    @media only screen and (min-width: ${screen.tablet.frame}px) {
+    @media only screen and (min-width: ${screen.tablet.frame}) {
       box-shadow: ${shadows.small};
 
       border-radius: 8px;
@@ -18,11 +18,11 @@ const Wrapper = styled.div(
       max-width: 720px;
     }
 
-    @media only screen and (min-width: ${screen.desktop.frame}px) {
+    @media only screen and (min-width: ${screen.desktop.frame}) {
       max-width: 900px;
     }
 
-    @media only screen and (min-width: ${screen.desktopHD.frame}px) {
+    @media only screen and (min-width: ${screen.desktopHD.frame}) {
       padding: 1.75rem 1.5rem;
       max-width: 1024px;
     }

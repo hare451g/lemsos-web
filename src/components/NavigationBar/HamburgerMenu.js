@@ -5,7 +5,7 @@ const HamburgerMenu = styled.div(
     display: block;
     cursor: pointer;
 
-    @media only screen and (min-width: ${screen.tablet.frame}px) {
+    @media only screen and (min-width: ${screen.tablet.frame}) {
       display: none;
     }
   `

@@ -9,7 +9,7 @@ import { useState } from 'react';
 */
 
 // components
-import { Box } from '../src/shared';
+import { Box, Card } from '../src/shared';
 
 // containers
 import { DonationForm, TransferForm } from '../src/containers';
@@ -51,16 +51,18 @@ function DonationPage({
   if (isSubmitted) {
     return (
       <Box my="2rem" mx={[0, 'auto']} maxWidth={['100%', '720px']}>
-        <TransferForm
-          gender={form.gender}
-          name={form.name}
-          type={form.type}
-          amount={form.amount}
-          accountNumber={accountNumber}
-          accountOwner={accountOwner}
-          expiredAt={expiredAt}
-          uniqueId={uniqueId}
-        />
+        <Card>
+          <TransferForm
+            gender={form.gender}
+            name={form.name}
+            type={form.type}
+            amount={form.amount}
+            accountNumber={accountNumber}
+            accountOwner={accountOwner}
+            expiredAt={expiredAt}
+            uniqueId={uniqueId}
+          />
+        </Card>
       </Box>
     );
   }
@@ -69,7 +71,6 @@ function DonationPage({
     <CenteredLayout title="Donasi Online">
       <DonationForm
         infaqTypes={infaqTypes}
-        provinces={provinces}
         initialAmount={amount}
         type={type}
         onSubmit={handleSubmit}
@@ -80,21 +81,18 @@ function DonationPage({
 
 export async function getServerSideProps({ query }) {
   const data = require('../public/data/infaq-types.json');
-  const { amount = 0, infaqType = null } = query;
+  const { amount = 0, infaqType = null, infaqId = null } = query;
 
-  let type = null;
+  let type = infaqId;
 
   if (infaqType) {
     const index = data.findIndex((item) => item.key === infaqType);
     type = data[index].id;
   }
 
-  const provinces = await getProvinces();
-
   return {
     props: {
       infaqTypes: data,
-      provinces: provinces.list,
       amount,
       type,
     },
