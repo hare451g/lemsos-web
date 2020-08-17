@@ -1,78 +1,74 @@
+import { useRouter } from 'next/router';
 import { CONTENTS_PATH } from '../src/constants/paths';
 
+// containers
+import Programs from '../src/containers/Programs';
+
 // shared components
-import { Box, Card, Divider, Flex, Text } from '../src/shared';
+import { Box, Divider, Text } from '../src/shared';
 
 // utils
 import { getMDfromFile } from '../src/utils/contents';
 
-export default function Program({ articles }) {
+export default function Program({ programs }) {
+  const router = useRouter();
+
+  const handleProgramClick = (infaqId) => {
+    router.push({
+      pathname: '/donasi',
+      query: {
+        infaqId,
+      },
+    });
+  };
+
   return (
-    <>
-      <Box as="section" name="program header" m="16px" mb="8px">
-        <Text as="h1" fontSize="2.5rem" fontWeight="400">
+    <Box mx={['0.5rem', '2rem']} my={['1rem', '2rem']}>
+      <Box>
+        <Text as="h1" fontWeight="400" fontSize="2rem">
           Program
         </Text>
+        <Divider />
       </Box>
-      <Box as="section" name="program cards">
-        {articles.map((row, index) => (
-          <Flex key={`prog-row-${index}`}>
-            {row.map(({ content, image, title }, colIndex) => (
-              <Flex
-                flexDirection="column"
-                key={`prog-row-${index}-col-${colIndex}`}
-                width="50%"
-                my="24px"
-                mx="12px"
-              >
-                <Card minHeight="240px">
-                  <Text as="h3" fontSize="1.25rem">
-                    {title}
-                  </Text>
-                  <Divider />
-                  <Text fontSize="1.15rem" lineHeight="1.5rem">
-                    {content}
-                  </Text>
-                </Card>
-              </Flex>
-            ))}
-          </Flex>
-        ))}
-      </Box>
-    </>
+      <Programs programs={programs} onProgramClick={handleProgramClick} />
+    </Box>
   );
 }
 
 export async function getStaticProps(context) {
   const path = `${CONTENTS_PATH}/program/`;
-  const articles = [
+  const programs = [
     [
       {
-        title: 'Infaq Listrik',
-        content: getMDfromFile(`${path}/infaq-listrik.md`),
-        image: `/images/lemsos-logo.jpg`,
+        content: getMDfromFile(`${path}/kebutuhan-santri.md`),
+        image: `/images/program/pokok-santri.jpg`,
+        title: 'Kebutuhan Pokok Santri',
+        infaqId: 1,
       },
       {
-        title: 'Kebutuhan Pokok Guru',
-        content: getMDfromFile(`${path}/kebutuhan-pokok-guru.md`),
-        image: `/images/lemsos-logo.jpg`,
+        content: getMDfromFile(`${path}/sarana-prasarana.md`),
+        image: `/images/program/sarana-prasarana.jpg`,
+        title: 'Sarana Prasarana',
+        infaqId: 2,
       },
     ],
     [
       {
-        title: 'Kebutuhan Pokok Santri',
-        content: getMDfromFile(`${path}/kebutuhan-santri.md`),
-        image: `/images/lemsos-logo.jpg`,
+        content: getMDfromFile(`${path}/infaq-listrik.md`),
+        image: `/images/program/infaq-listrik.jpg`,
+        title: 'Infaq Listrik',
+        infaqId: 3,
       },
       {
-        title: 'Sarana Prasarana',
-        content: getMDfromFile(`${path}/sarana-prasarana.md`),
-        image: `/images/lemsos-logo.jpg`,
+        content: getMDfromFile(`${path}/kebutuhan-pokok-guru.md`),
+        image: `/images/program/pokok-guru.jpg`,
+        title: 'Kebutuhan Pokok Guru',
+        infaqId: 4,
       },
     ],
   ];
 
   return {
-    props: { articles }, // will be passed to the page component as props
+    props: { programs }, // will be passed to the page component as props
   };
 }

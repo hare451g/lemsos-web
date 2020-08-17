@@ -82,9 +82,9 @@ function DonationPage({
 
 export async function getServerSideProps({ query }) {
   const data = require('../public/data/infaq-types.json');
-  const { amount = 0, infaqType = null } = query;
+  const { amount = 0, infaqType = null, infaqId = null } = query;
 
-  let type = null;
+  let type = infaqId;
 
   if (infaqType) {
     const index = data.findIndex((item) => item.key === infaqType);
