@@ -15,11 +15,12 @@ function DonationForm({
   provinces = [],
   initialAmount = 0,
   type = null,
+  onSubmit = () => {},
 }) {
   // form states
   const [phone, setPhone] = useForm('');
   const [name, setName] = useForm('');
-  const [gender, setGender] = useForm('');
+  const [gender, setGender] = useForm('Pria');
   const [email, setEmail] = useForm('');
   const [province, setProvince] = useForm(null);
   const [city, setCity] = useForm(null);
@@ -62,6 +63,7 @@ function DonationForm({
       amount,
       donationType,
     };
+    onSubmit(form);
     setSubmitting(false);
   }
 
