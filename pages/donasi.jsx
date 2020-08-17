@@ -1,4 +1,6 @@
-/*
+import { useState } from 'react';
+
+/* 
   Donasi Online
     - INFAQ Listrik
     - INFAQ Pokok Guru
@@ -6,8 +8,11 @@
     - INFAQ Sarana Prasarana
 */
 
-// domain
-import { DonationForm } from '../src/containers';
+// components
+import { Box } from '../src/shared';
+
+// containers
+import { DonationForm, TransferForm } from '../src/containers';
 
 // Layouts
 import { CenteredLayout } from '../src/layouts';
@@ -15,7 +20,51 @@ import { CenteredLayout } from '../src/layouts';
 // services
 import { getProvinces } from '../src/services/Region';
 
-function DonationPage({ infaqTypes = [], provinces = [], amount, type }) {
+function DonationPage({
+  infaqTypes = [],
+  provinces = [],
+  amount = 0,
+  type = null,
+  accountNumber = 74545566668,
+  accountOwner = 'Yayasan Darul Qur’an Al-Muqorrobiin',
+  expiredAt = '15 November 2020, 14:01',
+  uniqueId = '',
+}) {
+  const [isSubmitted, setSubmitted] = useState(false);
+
+  const [form, setForm] = useState({
+    phone: '',
+    name: '',
+    gender: '',
+    email: '',
+    province: '',
+    city: '',
+    amount: '',
+    donationType: '',
+  });
+
+  function handleSubmit(data) {
+    setForm(data);
+    setSubmitted(true);
+  }
+
+  if (isSubmitted) {
+    return (
+      <Box my="2rem" mx={[0, 'auto']} maxWidth={['100%', '720px']}>
+        <TransferForm
+          gender={form.gender}
+          name={form.name}
+          type={form.type}
+          amount={form.amount}
+          accountNumber={accountNumber}
+          accountOwner={accountOwner}
+          expiredAt={expiredAt}
+          uniqueId={uniqueId}
+        />
+      </Box>
+    );
+  }
+
   return (
     <CenteredLayout title="Donasi Online">
       <DonationForm
@@ -23,6 +72,7 @@ function DonationPage({ infaqTypes = [], provinces = [], amount, type }) {
         provinces={provinces}
         initialAmount={amount}
         type={type}
+        onSubmit={handleSubmit}
       />
     </CenteredLayout>
   );
