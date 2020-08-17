@@ -9,7 +9,7 @@ import { useState } from 'react';
 */
 
 // components
-import { Box } from '../src/shared';
+import { Box, Card } from '../src/shared';
 
 // containers
 import { DonationForm, TransferForm } from '../src/containers';
@@ -51,16 +51,18 @@ function DonationPage({
   if (isSubmitted) {
     return (
       <Box my="2rem" mx={[0, 'auto']} maxWidth={['100%', '720px']}>
-        <TransferForm
-          gender={form.gender}
-          name={form.name}
-          type={form.type}
-          amount={form.amount}
-          accountNumber={accountNumber}
-          accountOwner={accountOwner}
-          expiredAt={expiredAt}
-          uniqueId={uniqueId}
-        />
+        <Card>
+          <TransferForm
+            gender={form.gender}
+            name={form.name}
+            type={form.type}
+            amount={form.amount}
+            accountNumber={accountNumber}
+            accountOwner={accountOwner}
+            expiredAt={expiredAt}
+            uniqueId={uniqueId}
+          />
+        </Card>
       </Box>
     );
   }

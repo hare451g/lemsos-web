@@ -7,7 +7,7 @@ const Wrapper = styled.div(
     box-shadow: ${shadows.small};
     margin-bottom: 2.75rem;
 
-    @media only screen and (min-width: ${screen.tablet.frame}px) {
+    @media only screen and (min-width: ${screen.tablet.frame}) {
       border-radius: 8px;
 
       margin: auto;
@@ -18,11 +18,11 @@ const Wrapper = styled.div(
       max-width: 720px;
     }
 
-    @media only screen and (min-width: ${screen.desktop.frame}px) {
+    @media only screen and (min-width: ${screen.desktop.frame}) {
       max-width: 900px;
     }
 
-    @media only screen and (min-width: ${screen.desktopHD.frame}px) {
+    @media only screen and (min-width: ${screen.desktopHD.frame}) {
       padding: 1.75rem 1.5rem;
       max-width: 1024px;
     }

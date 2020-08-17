@@ -18,7 +18,7 @@ const NavigationContainer = styled.nav(
 
     padding: 8px 16px;
 
-    @media only screen and (min-width: ${screen.tablet.frame}px) {
+    @media only screen and (min-width: ${screen.tablet.frame}) {
       flex: 1;
       display: flex;
       padding: 0px 24px;

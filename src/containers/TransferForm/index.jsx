@@ -20,7 +20,7 @@ function TransferForm({
   const pronounce = gender === 'Pria' ? 'Bapak' : 'Ibu';
 
   return (
-    <Box bg="white" p="1rem">
+    <Box p="1rem">
       <Flex alignItems="center" justifyContent="space-between">
         <img src="/images/lemsos-logo.jpg" width="72px" />
         <Text fontSize="1.5rem" fontWeight="600" as="h1">

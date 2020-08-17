@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Main = styled.main(
   ({ theme: { colors } }) => css`
-    background-color: ${colors.lightGray7};
+    background: linear-gradient(${colors.lightGray6}, ${colors.lightGray4});
     flex: 1;
     margin-top: 70px;
   `

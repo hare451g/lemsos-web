@@ -21,10 +21,10 @@ const GlobalStyles = createGlobalStyle(
     :root {
       font-size: 12px;
       color: ${colors.darkGray5};
-      font-family: ${typography.fontFamily.primary} sans-serif;
+      font-family: ${typography.fontFamily.primary};
     }
 
-    @media only screen and (min-width: ${screen.tablet.frame}px) {
+    @media only screen and (min-width: ${screen.tablet.frame}) {
       :root {
         font-size: 16px;
       }

@@ -1,27 +1,27 @@
 const screen = {
   desktopHD: {
-    frame: 1440,
+    frame: '1440px',
     columns: 12,
-    width: 64,
-    gutter: 30,
+    width: '64px',
+    gutter: '30px',
   },
   desktop: {
-    frame: 1024,
+    frame: '1024px',
     columns: 12,
-    width: 50,
-    gutter: 30,
+    width: '50px',
+    gutter: '30px',
   },
   tablet: {
-    frame: 768,
+    frame: '768px',
     columns: 6,
-    width: 88,
-    gutter: 30,
+    width: '88px',
+    gutter: '30px',
   },
   mobile: {
-    frame: 320,
+    frame: '320px',
     columns: 2,
-    width: 130,
-    gutter: 30,
+    width: '130px',
+    gutter: '30px',
   },
 };
 
