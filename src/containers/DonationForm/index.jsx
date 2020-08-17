@@ -8,11 +8,10 @@ import useForm from '../../hooks/useForm';
 import { Button, Flex, Input, Option, Select, Text } from '../../shared';
 
 // services
-import { getCities } from '../../services/Region';
+import { getCities, getProvinces } from '../../services/Region';
 
 function DonationForm({
   infaqTypes = [],
-  provinces = [],
   initialAmount = 0,
   type = null,
   onSubmit = () => {},
@@ -29,10 +28,27 @@ function DonationForm({
 
   // region service state
   const [cities, setCities] = useState([]);
+  const [provinces, setProvinces] = useState([]);
 
   // region loading state
   const [isLoading, setLoading] = useState(false);
   const [isSubmitting, setSubmitting] = useState(false);
+
+  // when mount
+  useEffect(() => {
+    async function onFetchProvinces() {
+      setLoading(true);
+      const result = await getProvinces();
+      if (result.list) {
+        setProvinces(result.list);
+      }
+      setLoading(false);
+    }
+
+    if (!isLoading) {
+      onFetchProvinces();
+    }
+  }, []);
 
   // When provice changes
   useEffect(() => {

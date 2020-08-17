@@ -71,7 +71,6 @@ function DonationPage({
     <CenteredLayout title="Donasi Online">
       <DonationForm
         infaqTypes={infaqTypes}
-        provinces={provinces}
         initialAmount={amount}
         type={type}
         onSubmit={handleSubmit}
@@ -91,12 +90,9 @@ export async function getServerSideProps({ query }) {
     type = data[index].id;
   }
 
-  const provinces = await getProvinces();
-
   return {
     props: {
       infaqTypes: data,
-      provinces: provinces.list,
       amount,
       type,
     },
