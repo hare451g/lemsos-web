@@ -1,0 +1,96 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Role {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique
+  Staff Staff[]
+}
+
+model Staff {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  phone    String @unique
+  role     Role   @relation(fields: [roleId], references: [id])
+  password String
+  salt     String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  DonationType     DonationType[]
+  Donator          Donator[]
+  Donation         Donation[]
+  ZakatCalculation ZakatCalculation[]
+  roleId           Int
+}
+
+model Donator {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  phone    String @unique
+  fullName String
+  city     Int
+
+  ip String?
+
+  updatedAt DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  Staff    Staff?     @relation(fields: [staffId], references: [id])
+  staffId  Int?
+  Donation Donation[]
+}
+
+model DonationType {
+  id      Int    @id @default(autoincrement())
+  name    String
+  content String
+  image   String
+
+  updatedAt  DateTime @default(now())
+  createdAt  DateTime @default(now())
+  modifiedBy Staff    @relation(fields: [staffId], references: [id])
+
+  staffId  Int
+  Donation Donation[]
+}
+
+model Donation {
+  id              Int          @id @default(autoincrement())
+  type            DonationType @relation(fields: [donationTypeId], references: [id])
+  donator         Donator      @relation(fields: [donatorId], references: [id])
+  amount          Float
+  code            Int
+  amountAfterCode Float
+  expiredAt       DateTime
+
+  verifiedAt DateTime
+  verifiedBy Staff    @relation(fields: [staffId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  donationTypeId Int
+  donatorId      Int
+  staffId        Int
+}
+
+model ZakatCalculation {
+  id         Int    @id @default(autoincrement())
+  name       String
+  nishab     Float
+  percentage Float
+
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now())
+  modifiedBy Staff    @relation(fields: [staffId], references: [id])
+
+  staffId Int
+}
