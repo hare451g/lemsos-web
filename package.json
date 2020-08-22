@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "migrate:save": "prisma migrate save --experimental -c -n lemsos",
+    "migrate:up": "prisma migrate up --experimental -c",
+    "prisma:generate": "prisma generate",
+    "build": "yarn migrate:up; yarn next build",
     "start": "next start"
   },
   "dependencies": {
