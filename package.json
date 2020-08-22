@@ -4,12 +4,17 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "migrate:save": "prisma migrate save --experimental -c -n lemsos",
+    "migrate:up": "prisma migrate up --experimental -c",
+    "prisma:generate": "prisma generate",
+    "build": "yarn migrate:up; yarn next build",
     "start": "next start"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.19.26",
+    "@prisma/client": "^2.5.1",
     "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
     "next": "9.5.1",
     "numeral": "^2.0.6",
     "react": "16.13.1",
@@ -21,6 +26,7 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.5.1",
     "prettier": "^2.0.5"
   }
 }

@@ -60,6 +60,12 @@
         "name": "INFAQ Sarana Prasarana",
         "content": "sarana-prasarana.md",
         "img": "/images/donation/company.jfif"
+      },
+      {
+        "key": "infaq_beasiswa",
+        "name": "INFAQ Beasiswa Yatim & Dhuafa",
+        "content": "sarana-prasarana.md",
+        "img": "/images/donation/scholarship.jpg"
       }
     ]
   }
