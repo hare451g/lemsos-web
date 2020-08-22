@@ -17,6 +17,7 @@ model Staff {
   id       Int    @id @default(autoincrement())
   email    String @unique
   phone    String @unique
+  fullName String
   role     Role   @relation(fields: [roleId], references: [id])
   password String
   salt     String
