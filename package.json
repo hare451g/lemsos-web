@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "db:save": "prisma migrate save --experimental -c -n lemsos",
+    "db:up": "prisma migrate up --experimental -c",
+    "db:generate": "prisma generate",
     "dev": "next dev",
-    "migrate:save": "prisma migrate save --experimental -c -n lemsos",
-    "migrate:up": "prisma migrate up --experimental -c",
-    "prisma:generate": "prisma generate",
-    "build": "yarn migrate:up; yarn prisma:generate; yarn next build",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
